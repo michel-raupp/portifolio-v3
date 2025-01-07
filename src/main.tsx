@@ -1,7 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import { ThemeColorsProvider } from "./providers";
+import { I18nProvider, ThemeColorsProvider } from "./providers";
+import "./locales";
 
 import App from "./App.tsx";
 import "./index.css";
@@ -9,9 +10,11 @@ import "./index.css";
 const Root = () => {
   return (
     <StrictMode>
-      <ThemeColorsProvider>
-        <App />
-      </ThemeColorsProvider>
+      <I18nProvider>
+        <ThemeColorsProvider>
+          <App />
+        </ThemeColorsProvider>
+      </I18nProvider>
     </StrictMode>
   );
 };

@@ -1,6 +1,13 @@
 import { ThemeProvider } from "styled-components";
 import { useThemeStore } from "../stores/theme";
-import { DARK_THEME, LIGHT_THEME, THEME_TYPES } from "../constants";
+import { DARK_THEME, LIGHT_THEME } from "../constants";
+
+export const THEME_TYPES = {
+  DARK: "DARK",
+  LIGHT: "LIGHT",
+} as const;
+
+export type ThemeTypes = keyof typeof THEME_TYPES;
 
 interface ThemeColorsProps {
   children: React.ReactNode;

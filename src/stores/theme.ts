@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { THEME_TYPES, ThemeTypes } from "../constants";
+import { THEME_TYPES, ThemeTypes } from "../providers";
 
 interface ThemeState {
   theme: ThemeTypes;

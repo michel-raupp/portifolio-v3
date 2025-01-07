@@ -15,10 +15,3 @@ export const DARK_THEME = {
   lightGray: "#2F2D37",
   text: "#F9F8FC",
 } as const;
-
-export const THEME_TYPES = {
-  DARK: "DARK",
-  LIGHT: "LIGHT",
-} as const;
-
-export type ThemeTypes = keyof typeof THEME_TYPES;
