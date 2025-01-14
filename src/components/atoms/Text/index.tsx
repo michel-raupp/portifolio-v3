@@ -1,5 +1,5 @@
 import { useThemeStore } from "@/stores/theme";
-import { TEXT_HIERARCHIES, TTextHierarchies, TTextSize } from "@/constants";
+import { TEXT_HIERARCHIES, TTextHierarchies, TTextSize } from "./types";
 import { StyledH1, StyledH2, StyledH3, StyledText } from "./style";
 
 interface IText {

@@ -1,14 +1,14 @@
 import styled from "styled-components";
+import { DARK_THEME, LIGHT_THEME } from "@/constants";
+
 import {
   BUTTON_COLORS,
   BUTTON_SIZES,
   BUTTON_WIDTH,
-  DARK_THEME,
-  LIGHT_THEME,
   TButtonColors,
   TButtonSizes,
   TButtonWidth,
-} from "@/constants";
+} from "./types";
 
 interface IStyleButton {
   color: TButtonColors;

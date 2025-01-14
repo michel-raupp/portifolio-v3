@@ -1,14 +1,16 @@
 import { ReactNode } from "react";
 
 import { useThemeStore } from "@/stores/theme";
+import { DARK_THEME, LIGHT_THEME } from "@/constants";
+
 import {
-  DARK_THEME,
-  LIGHT_THEME,
+  BUTTON_COLORS,
+  BUTTON_SIZES,
+  BUTTON_WIDTH,
   TButtonColors,
   TButtonSizes,
   TButtonWidth,
-} from "@/constants";
-
+} from "./types";
 import { StyleButton, StyledText } from "./style";
 
 interface IButton {
@@ -27,46 +29,39 @@ interface IRenderText {
   size: TButtonSizes;
 }
 
+const getTextColor = (
+  isDarkMode: boolean,
+  buttonColor: TButtonColors
+): string => {
+  if (buttonColor === BUTTON_COLORS.SECONDARY) {
+    return isDarkMode ? DARK_THEME.text : LIGHT_THEME.text;
+  }
+  if (buttonColor === BUTTON_COLORS.DARK) {
+    return isDarkMode ? DARK_THEME.text : LIGHT_THEME.background;
+  }
+  return isDarkMode ? DARK_THEME.text : LIGHT_THEME.background;
+};
+
 const RenderText = ({ title, buttonColor, size }: IRenderText) => {
   const { isDarkMode } = useThemeStore((state) => state);
+  const textColor = getTextColor(isDarkMode, buttonColor);
 
-  if (buttonColor === "DARK") {
-    <StyledText
-      color={isDarkMode ? DARK_THEME.text : LIGHT_THEME.background}
-      size={size}
-    >
-      {title}
-    </StyledText>;
-  }
-  if (buttonColor === "SECONDARY") {
-    <StyledText
-      color={isDarkMode ? DARK_THEME.text : LIGHT_THEME.text}
-      size={size}
-    >
-      {title}
-    </StyledText>;
-  }
   return (
-    <StyledText
-      color={isDarkMode ? DARK_THEME.text : LIGHT_THEME.background}
-      size={size}
-    >
+    <StyledText color={textColor} size={size}>
       {title}
     </StyledText>
   );
 };
 
-const Button = (props: IButton) => {
-  const {
-    title,
-    color = "PRIMARY",
-    size = "NORMAL",
-    width = "COMPACT",
-    onClick = () => {},
-    iconLeft,
-    iconRight,
-  } = props;
-
+const Button = ({
+  title,
+  color = BUTTON_COLORS.PRIMARY,
+  size = BUTTON_SIZES.LARGE,
+  width = BUTTON_WIDTH.COMPACT,
+  onClick = () => {},
+  iconLeft,
+  iconRight,
+}: IButton) => {
   const { isDarkMode } = useThemeStore((state) => state);
 
   return (
@@ -77,9 +72,9 @@ const Button = (props: IButton) => {
       width={width}
       onClick={onClick}
     >
-      {iconLeft && iconLeft}
+      {iconLeft}
       {title && <RenderText title={title} buttonColor={color} size={size} />}
-      {iconRight && iconRight}
+      {iconRight}
     </StyleButton>
   );
 };
