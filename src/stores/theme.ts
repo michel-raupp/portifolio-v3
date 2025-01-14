@@ -1,9 +1,10 @@
 import { create } from "zustand";
-import { THEME_TYPES, ThemeTypes } from "../providers";
+import { THEME_TYPES, ThemeTypes } from "@/providers";
 
 interface ThemeState {
   theme: ThemeTypes;
   toggleTheme: () => void;
+  isDarkMode: boolean;
 }
 
 const getInitialTheme = (): ThemeTypes => {
@@ -16,16 +17,21 @@ const getInitialTheme = (): ThemeTypes => {
     : THEME_TYPES.LIGHT;
 };
 
-export const useThemeStore = create<ThemeState>((set) => ({
-  theme: getInitialTheme(),
-  toggleTheme: () =>
-    set((state) => {
-      const newTheme =
-        state.theme === THEME_TYPES.LIGHT
-          ? THEME_TYPES.DARK
-          : THEME_TYPES.LIGHT;
+export const useThemeStore = create<ThemeState>((set) => {
+  const initialTheme = getInitialTheme();
 
-      localStorage.setItem("theme", newTheme);
-      return { theme: newTheme };
-    }),
-}));
+  return {
+    theme: initialTheme,
+    toggleTheme: () =>
+      set((state) => {
+        const newTheme =
+          state.theme === THEME_TYPES.LIGHT
+            ? THEME_TYPES.DARK
+            : THEME_TYPES.LIGHT;
+
+        localStorage.setItem("theme", newTheme);
+        return { theme: newTheme, isDarkMode: newTheme === THEME_TYPES.DARK };
+      }),
+    isDarkMode: initialTheme === "DARK",
+  };
+});
