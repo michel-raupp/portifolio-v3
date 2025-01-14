@@ -15,3 +15,5 @@ export const DARK_THEME = {
   lightGray: "#2F2D37",
   text: "#F9F8FC",
 } as const;
+
+export type TThemeColors = typeof LIGHT_THEME;
