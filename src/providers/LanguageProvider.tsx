@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useMemo } from "react";
-import { TLanguage, useI18nStore } from "../stores/i18n";
+import { TLanguage, useI18nStore } from "@/stores/i18n";
 
 interface I18nProviderProps {
   children: React.ReactNode;

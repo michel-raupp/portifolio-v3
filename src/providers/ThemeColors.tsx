@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
-import { useThemeStore } from "../stores/theme";
-import { DARK_THEME, LIGHT_THEME } from "../constants";
+import { useThemeStore } from "@/stores/theme";
+import { DARK_THEME, LIGHT_THEME } from "@/constants";
 
 export const THEME_TYPES = {
   DARK: "DARK",
