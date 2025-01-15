@@ -1,15 +1,17 @@
 import styled from "styled-components";
-import { DARK_THEME, LIGHT_THEME, TEXT_SIZE, TTextSize } from "@/constants";
+
+import { DARK_THEME, LIGHT_THEME } from "@/constants";
+import { TEXT_SIZE, TTextSize } from "./types";
 
 interface IStyledText {
   color: string;
   size: TTextSize;
   bold?: boolean;
-  darkMode: boolean;
+  $darkMode: boolean;
 }
 
-const getColor = (color: string, darkMode: boolean) => {
-  const theme = darkMode ? DARK_THEME : LIGHT_THEME;
+const getColor = (color: string, $darkMode: boolean) => {
+  const theme = $darkMode ? DARK_THEME : LIGHT_THEME;
 
   return theme ? [color] : "transparent";
 };
@@ -69,25 +71,25 @@ const getFontSize = (width: TTextSize) => {
 };
 
 export const StyledText = styled.p<IStyledText>`
-  color: ${({ color, darkMode }) => getColor(color, darkMode)};
+  color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
 `;
 
 export const StyledH1 = styled.h1<IStyledText>`
-  color: ${({ color, darkMode }) => getColor(color, darkMode)};
+  color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
 `;
 
 export const StyledH2 = styled.h2<IStyledText>`
-  color: ${({ color, darkMode }) => getColor(color, darkMode)};
+  color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
 `;
 
 export const StyledH3 = styled.h3<IStyledText>`
-  color: ${({ color, darkMode }) => getColor(color, darkMode)};
+  color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
 `;

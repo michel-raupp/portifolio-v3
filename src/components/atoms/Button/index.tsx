@@ -66,7 +66,7 @@ const Button = ({
 
   return (
     <StyleButton
-      darkMode={isDarkMode}
+      $darkMode={isDarkMode}
       color={color}
       size={size}
       width={width}
