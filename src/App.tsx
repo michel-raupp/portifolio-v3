@@ -1,11 +1,10 @@
 import { useTranslation } from "react-i18next";
 
-import { useThemeStore } from "./stores/theme";
-import { LANGUAGES, TLanguage, useI18nStore } from "./stores/i18n";
-import { THEME_TYPES } from "./providers";
+import { useThemeStore, LANGUAGES, useI18nStore, TLanguage } from "@/stores";
+import { Button } from "@/components/atoms";
 
 const App = () => {
-  const { toggleTheme, theme } = useThemeStore((state) => state);
+  const { toggleTheme } = useThemeStore((state) => state);
   const { updateLanguage } = useI18nStore((state) => state);
   const { t } = useTranslation("default");
 
@@ -26,9 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <button onClick={toggleTheme}>
-        {t("hello")}: {theme === THEME_TYPES.LIGHT ? "Escuro" : "Claro"}
-      </button>
+      <Button title={t("hello")} onClick={toggleTheme} color="SECONDARY" />
 
       {translates.map((translate) => (
         <button

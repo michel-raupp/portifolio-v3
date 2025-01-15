@@ -17,3 +17,10 @@ export const DARK_THEME = {
 } as const;
 
 export type TThemeColors = typeof LIGHT_THEME;
+
+export const THEME_TYPES = {
+  DARK: "DARK",
+  LIGHT: "LIGHT",
+} as const;
+
+export type ThemeTypes = keyof typeof THEME_TYPES;
