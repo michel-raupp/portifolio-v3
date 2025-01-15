@@ -1,20 +1,16 @@
 import styled from "styled-components";
 
-import { DARK_THEME, LIGHT_THEME } from "@/constants";
+import { getColor } from "@/helpers";
+import { TThemeColors } from "@/constants";
+
 import { TEXT_SIZE, TTextSize } from "./types";
 
 interface IStyledText {
-  color: string;
+  color: TThemeColors;
   size: TTextSize;
   bold?: boolean;
   $darkMode: boolean;
 }
-
-const getColor = (color: string, $darkMode: boolean) => {
-  const theme = $darkMode ? DARK_THEME : LIGHT_THEME;
-
-  return theme ? [color] : "transparent";
-};
 
 const getFontSize = (width: TTextSize) => {
   switch (width) {
