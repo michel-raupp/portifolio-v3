@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import { useThemeStore, LANGUAGES, useI18nStore, TLanguage } from "@/stores";
 import { Button } from "@/components/atoms";
+import Chat from "./components/atoms/Chat";
+import { TAIL_DIRECTIONS } from "./components/atoms/Chat/types";
 
 const App = () => {
   const { toggleTheme } = useThemeStore((state) => state);
@@ -26,15 +28,22 @@ const App = () => {
   return (
     <div>
       <Button title={t("hello")} onClick={toggleTheme} color="SECONDARY" />
-
-      {translates.map((translate) => (
-        <button
-          key={translate.value}
-          onClick={() => choseLanguage(translate.value)}
-        >
-          {translate.label}
-        </button>
-      ))}
+      <div>
+        {translates.map((translate) => (
+          <Button
+            key={translate.value}
+            title={translate.label}
+            onClick={() => choseLanguage(translate.value)}
+            color="SECONDARY"
+          />
+        ))}
+      </div>
+      <Chat
+        title="titulo"
+        text="primeiro texto"
+        tailDirection={TAIL_DIRECTIONS.RIGHT}
+        hasHeading
+      />
     </div>
   );
 };

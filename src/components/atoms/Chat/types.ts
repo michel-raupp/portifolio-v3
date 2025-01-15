@@ -1,19 +1,7 @@
-export const BUTTON_COLORS = {
-  PRIMARY: "PRIMARY",
-  SECONDARY: "SECONDARY",
-  DARK: "DARK",
+export const TAIL_DIRECTIONS = {
+  LEFT: "left",
+  RIGHT: "right",
 } as const;
 
-export const BUTTON_SIZES = {
-  NORMAL: "NORMAL",
-  LARGE: "LARGE",
-} as const;
-
-export const BUTTON_WIDTH = {
-  COMPACT: "COMPACT",
-  FULL: "FULL",
-} as const;
-
-export type TButtonColors = (typeof BUTTON_COLORS)[keyof typeof BUTTON_COLORS];
-export type TButtonSizes = (typeof BUTTON_SIZES)[keyof typeof BUTTON_SIZES];
-export type TButtonWidth = (typeof BUTTON_WIDTH)[keyof typeof BUTTON_WIDTH];
+export type TTailDirections =
+  (typeof TAIL_DIRECTIONS)[keyof typeof TAIL_DIRECTIONS];

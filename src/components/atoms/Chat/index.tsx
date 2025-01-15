@@ -1,33 +1,49 @@
 import { useThemeStore } from "@/stores/theme";
-import { Bubble, StyledChat } from "./style";
+
 import { Text } from "@/components/atoms";
-import { THEME_COLORS } from "@/constants";
 
-export const TAIL_DIRECTIONS = {
-  LEFT: "left",
-  RIGHT: "right",
-} as const;
-
-export type TTailDirections =
-  (typeof TAIL_DIRECTIONS)[keyof typeof TAIL_DIRECTIONS];
+import { TAIL_DIRECTIONS, TTailDirections } from "./types";
+import { Bubble, StyledChat, Tail } from "./style";
+import { TEXT_HIERARCHIES, TEXT_SIZE } from "../Text/types";
 
 interface IChat {
   title?: string;
   text: string;
-  tailDirection?: TTailDirections;
+  tailDirection: TTailDirections;
+  hasHeading?: boolean;
 }
 
-const Chat = ({ title, text, tailDirection }: IChat) => {
+const Chat = ({ tailDirection, hasHeading, title, text }: IChat) => {
   const { isDarkMode } = useThemeStore((state) => state);
 
   return (
-    <StyledChat $darkMode={isDarkMode}>
-      <Bubble $darkMode={isDarkMode}>
-        {title && <h3>{title}</h3>}
-        <Text color={THEME_COLORS.text} text={text} />
-        {tailDirection === TAIL_DIRECTIONS.LEFT && <span>&lt;</span>}
-        {tailDirection === TAIL_DIRECTIONS.RIGHT && <span>&gt;</span>}
+    <StyledChat $darkMode={isDarkMode} tailDirection={tailDirection}>
+      <Bubble $darkMode={isDarkMode} tailDirection={tailDirection}>
+        {title && (
+          <Text
+            text={title}
+            size={TEXT_SIZE.XXL}
+            hierarchy={
+              hasHeading
+                ? TEXT_HIERARCHIES.HEADING_1
+                : TEXT_HIERARCHIES.PARAGRAPH
+            }
+            bold
+          />
+        )}
+        <Text
+          text={text}
+          size={TEXT_SIZE.BASE}
+          hierarchy={TEXT_HIERARCHIES.PARAGRAPH}
+        />
       </Bubble>
+
+      {tailDirection === TAIL_DIRECTIONS.LEFT && (
+        <Tail $darkMode={isDarkMode} tailDirection={tailDirection} />
+      )}
+      {tailDirection === TAIL_DIRECTIONS.RIGHT && (
+        <Tail $darkMode={isDarkMode} tailDirection={tailDirection} />
+      )}
     </StyledChat>
   );
 };
