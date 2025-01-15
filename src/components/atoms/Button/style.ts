@@ -17,7 +17,13 @@ interface IStyleButton {
   $darkMode: boolean;
 }
 
-const getColor = (color: TButtonColors, $darkMode: boolean) => {
+interface IStyledText {
+  color: TButtonColors;
+  size: TButtonSizes;
+  $darkMode: boolean;
+}
+
+const getButtonColor = (color: TButtonColors, $darkMode: boolean) => {
   const theme = $darkMode ? DARK_THEME : LIGHT_THEME;
   switch (color) {
     case BUTTON_COLORS.PRIMARY:
@@ -26,6 +32,17 @@ const getColor = (color: TButtonColors, $darkMode: boolean) => {
       return theme.secondary;
     case BUTTON_COLORS.DARK:
       return $darkMode ? DARK_THEME.gray : LIGHT_THEME.text;
+    default:
+      return "transparent";
+  }
+};
+
+const getTextColor = ($darkMode: boolean, color: TButtonColors): string => {
+  switch (color) {
+    case BUTTON_COLORS.SECONDARY:
+      return $darkMode ? DARK_THEME.text : LIGHT_THEME.text;
+    case BUTTON_COLORS.DARK:
+      return $darkMode ? DARK_THEME.text : LIGHT_THEME.background;
     default:
       return "transparent";
   }
@@ -64,7 +81,8 @@ export const StyleButton = styled.button<IStyleButton>`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
+  background-color: ${({ color, $darkMode }) =>
+    getButtonColor(color, $darkMode)};
   padding: ${({ size }) => getPadding(size)};
   width: ${({ width }) => getWidth(width)};
   border-radius: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "8px" : "4px")};
@@ -73,12 +91,7 @@ export const StyleButton = styled.button<IStyleButton>`
   }
 `;
 
-interface IStyledText {
-  color: string;
-  size: TButtonSizes;
-}
-
 export const StyledText = styled.p<IStyledText>`
-  color: ${({ color }) => color};
+  color: ${({ $darkMode, color }) => getTextColor($darkMode, color)};
   font-size: ${({ size }) => (size === BUTTON_SIZES.NORMAL ? "16px" : "14px")};
 `;

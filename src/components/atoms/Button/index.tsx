@@ -25,29 +25,14 @@ interface IButton {
 
 interface IRenderText {
   title: string;
-  buttonColor: TButtonColors;
+  color: TButtonColors;
   size: TButtonSizes;
+  $darkMode: boolean;
 }
 
-const getTextColor = (
-  isDarkMode: boolean,
-  buttonColor: TButtonColors
-): string => {
-  if (buttonColor === BUTTON_COLORS.SECONDARY) {
-    return isDarkMode ? DARK_THEME.text : LIGHT_THEME.text;
-  }
-  if (buttonColor === BUTTON_COLORS.DARK) {
-    return isDarkMode ? DARK_THEME.text : LIGHT_THEME.background;
-  }
-  return isDarkMode ? DARK_THEME.text : LIGHT_THEME.background;
-};
-
-const RenderText = ({ title, buttonColor, size }: IRenderText) => {
-  const { isDarkMode } = useThemeStore((state) => state);
-  const textColor = getTextColor(isDarkMode, buttonColor);
-
+const RenderText = ({ title, color, size, $darkMode }: IRenderText) => {
   return (
-    <StyledText color={textColor} size={size}>
+    <StyledText color={color} size={size} $darkMode={$darkMode}>
       {title}
     </StyledText>
   );
@@ -73,7 +58,14 @@ const Button = ({
       onClick={onClick}
     >
       {iconLeft}
-      {title && <RenderText title={title} buttonColor={color} size={size} />}
+      {title && (
+        <RenderText
+          title={title}
+          color={color}
+          size={size}
+          $darkMode={isDarkMode}
+        />
+      )}
       {iconRight}
     </StyleButton>
   );
