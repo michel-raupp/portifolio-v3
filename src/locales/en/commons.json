@@ -1,5 +1,11 @@
 {
   "hello": "hello world",
+  "openLangOptions": "Open language options",
+  "languageOptions": "Language options",
   "languagePortuguese": "Portuguese",
-  "languageEnglish": "English"
+  "languageEnglish": "English",
+  "changeToEnglish": "Change to English",
+  "changeToPortuguese": "Change to Portuguese",
+  "changeThemeToDark": "Change to dark theme",
+  "changeThemeToLight": "Change to light theme"
 }

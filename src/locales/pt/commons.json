@@ -1,5 +1,11 @@
 {
   "hello": "olá mundo",
+  "openLangOptions": "Abrir opções de idioma",
+  "languageOptions": "Opções de idioma",
   "languagePortuguese": "Português",
-  "languageEnglish": "Inglês"
+  "languageEnglish": "Inglês",
+  "changeToEnglish": "Mudar para Inglês",
+  "changeToPortuguese": "Mudar para Português",
+  "changeThemeToDark": "Mudar para tema escuro",
+  "changeThemeToLight": "Mudar para tema claro"
 }

@@ -4,9 +4,11 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 // EN
 import ENCommons from "./en/commons.json";
+import ENMenu from "./en/menu.json";
 
 // PT
 import PTCommons from "./pt/commons.json";
+import PTMenu from "./pt/menu.json";
 
 const ENDefault = {
   ...ENCommons,
@@ -19,10 +21,12 @@ const PTDefault = {
 const resources = {
   "en-US": {
     commons: { ...ENCommons, ...ENDefault },
+    menu: { ...ENMenu, ...ENDefault },
     default: { ...ENDefault },
   },
   "pt-BR": {
     commons: { ...PTCommons, ...PTDefault },
+    menu: { ...PTMenu, ...PTDefault },
     default: { ...PTDefault },
   },
 };
