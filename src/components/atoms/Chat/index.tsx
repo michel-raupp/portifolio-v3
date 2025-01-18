@@ -10,25 +10,15 @@ interface IChat {
   title?: string;
   text: string;
   direction: TTailDirections;
-  hasHeading?: boolean;
 }
 
-const Chat = ({ direction, hasHeading, title, text }: IChat) => {
+const Chat = ({ direction, title, text }: IChat) => {
   const { isDarkMode } = useThemeStore((state) => state);
   return (
     <StyledChat $darkMode={isDarkMode} direction={direction}>
       <Bubble $darkMode={isDarkMode} direction={direction}>
         {title && (
-          <Text
-            text={title}
-            size={TEXT_SIZE.XXL}
-            hierarchy={
-              hasHeading
-                ? TEXT_HIERARCHIES.HEADING_1
-                : TEXT_HIERARCHIES.PARAGRAPH
-            }
-            bold
-          />
+          <Text text={title} hierarchy={TEXT_HIERARCHIES.HEADING_1} bold />
         )}
         <Text
           text={text}
