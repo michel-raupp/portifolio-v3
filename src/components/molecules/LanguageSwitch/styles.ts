@@ -8,7 +8,16 @@ interface IProps {
 export const StyledSwitch = styled.div<IProps>`
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: relative;
+`;
+
+export const ImgContainer = styled.div<IProps>`
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid
+    ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
 `;
 
 export const FlagButton = styled.button<IProps>`
@@ -20,7 +29,8 @@ export const FlagButton = styled.button<IProps>`
   cursor: pointer;
   border: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
-  transition: border 0.3s;
+  transition: border-width 0.3s;
+
   &:hover {
     border: 3px solid
       ${({ $darkMode }) =>
@@ -33,14 +43,32 @@ export const FlagImg = styled.img<IProps>`
   transition: 0.3s;
 `;
 
+export const LanguageOption = styled.button<IProps>`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${({ $darkMode }) =>
+      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
+  }
+`;
+
 export const SelectWindow = styled.div<IProps>`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 48px;
+  top: 32px;
   right: 0;
   z-index: 10;
-  width: 100px;
+  padding: 4px;
+  border-radius: 8px;
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.gray : LIGHT_THEME.background};
   border: 1px solid
