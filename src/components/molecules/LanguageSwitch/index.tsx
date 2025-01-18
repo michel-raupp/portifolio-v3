@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { LANGUAGES, TLanguage, useI18nStore, useThemeStore } from "@/stores";
 
 import { LanguageButton, Option } from "./components";
-import { SelectWindow, StyledSwitch } from "./styles";
+import { SelectWindow, StyledSwitch, Tail } from "./styles";
 
 import PT_FLAG from "@/assets/flags/pt-BR.png";
 import EN_FLAG from "@/assets/flags/en-US.png";
@@ -50,7 +50,12 @@ const LanguageSwitch = () => {
         t={t}
       />
       {isOpen && (
-        <SelectWindow $darkMode={isDarkMode} tabIndex={0}>
+        <SelectWindow
+          $darkMode={isDarkMode}
+          aria-modal
+          aria-label={t("languageOptions")}
+        >
+          <Tail $darkMode={isDarkMode} aria-hidden />
           <Option
             data={translates}
             language={language}

@@ -64,8 +64,8 @@ export const SelectWindow = styled.div<IProps>`
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 32px;
-  right: 0;
+  top: 150%;
+  right: -8px;
   z-index: 10;
   padding: 4px;
   border-radius: 8px;
@@ -73,4 +73,21 @@ export const SelectWindow = styled.div<IProps>`
     $darkMode ? DARK_THEME.gray : LIGHT_THEME.background};
   border: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
+`;
+
+export const Tail = styled.div<IProps>`
+  position: absolute;
+  top: 0;
+  right: 16px;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  background-color: ${({ $darkMode }) =>
+    $darkMode ? DARK_THEME.gray : LIGHT_THEME.background};
+  border-radius: 0px 0 0 4px;
+  width: 16px;
+  height: 16px;
+  top: -8px;
+  rotate: 135deg;
+  border: 1px solid
+    ${({ $darkMode }) =>
+      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
 `;

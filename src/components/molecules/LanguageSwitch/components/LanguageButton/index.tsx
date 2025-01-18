@@ -18,12 +18,15 @@ const LanguageButton = ({
   handleOpen,
   t,
 }: ILanguageButton) => {
-  const currentLanguage = language === LANGUAGES.PT ? "portuguese" : "english";
   const flagSrc = language === LANGUAGES.PT ? PT_FLAG : EN_FLAG;
 
   return (
-    <FlagButton onClick={handleOpen} $darkMode={isDarkMode}>
-      <FlagImg src={flagSrc} alt={t(currentLanguage)} $darkMode={isDarkMode} />
+    <FlagButton
+      onClick={handleOpen}
+      $darkMode={isDarkMode}
+      aria-label={t("openLangOptions")}
+    >
+      <FlagImg src={flagSrc} alt="flag" $darkMode={isDarkMode} aria-hidden />
     </FlagButton>
   );
 };

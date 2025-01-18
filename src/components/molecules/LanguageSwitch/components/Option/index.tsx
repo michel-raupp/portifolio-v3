@@ -51,6 +51,7 @@ const Option = ({
     <LanguageOption
       $darkMode={isDarkMode}
       onClick={() => choseLanguage(targetLanguage.value)}
+      tabIndex={0}
     >
       <ImgContainer $darkMode={isDarkMode}>
         <FlagImg
