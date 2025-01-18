@@ -9,16 +9,15 @@ import { TEXT_HIERARCHIES, TEXT_SIZE } from "../Text/types";
 interface IChat {
   title?: string;
   text: string;
-  tailDirection: TTailDirections;
+  direction: TTailDirections;
   hasHeading?: boolean;
 }
 
-const Chat = ({ tailDirection, hasHeading, title, text }: IChat) => {
+const Chat = ({ direction, hasHeading, title, text }: IChat) => {
   const { isDarkMode } = useThemeStore((state) => state);
-
   return (
-    <StyledChat $darkMode={isDarkMode} tailDirection={tailDirection}>
-      <Bubble $darkMode={isDarkMode} tailDirection={tailDirection}>
+    <StyledChat $darkMode={isDarkMode} direction={direction}>
+      <Bubble $darkMode={isDarkMode} direction={direction}>
         {title && (
           <Text
             text={title}
@@ -38,11 +37,11 @@ const Chat = ({ tailDirection, hasHeading, title, text }: IChat) => {
         />
       </Bubble>
 
-      {tailDirection === TAIL_DIRECTIONS.LEFT && (
-        <Tail $darkMode={isDarkMode} tailDirection={tailDirection} />
+      {direction === TAIL_DIRECTIONS.LEFT && (
+        <Tail $darkMode={isDarkMode} direction={direction} />
       )}
-      {tailDirection === TAIL_DIRECTIONS.RIGHT && (
-        <Tail $darkMode={isDarkMode} tailDirection={tailDirection} />
+      {direction === TAIL_DIRECTIONS.RIGHT && (
+        <Tail $darkMode={isDarkMode} direction={direction} />
       )}
     </StyledChat>
   );
