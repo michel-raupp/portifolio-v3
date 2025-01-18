@@ -84,3 +84,10 @@ button {
   cursor: pointer;
   outline: inherit;
 }
+
+/* 12. Remove default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
