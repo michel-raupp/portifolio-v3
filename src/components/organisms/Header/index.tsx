@@ -3,21 +3,21 @@ import { useTranslation } from "react-i18next";
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
 
-import { LanguageSwitch } from "@/components/molecules";
+import { LanguageSwitch, ThemeSwitch } from "@/components/molecules";
 import { TEXT_SIZE } from "@/components/atoms/Text/types";
 import { Text } from "@/components/atoms";
 import { HeaderWrapper, MenuItem, MenuWrapper, StyledHeader } from "./styles";
 
 const MENU_ITEMS = [
   { label: "about", href: "#about" },
-  { label: "experiences", href: "#experiences" },
+  { label: "experience", href: "#experience" },
   { label: "projects", href: "#projects" },
   { label: "contact", href: "#contact" },
 ];
 
 const RenderMenuItems = () => {
   const { isDarkMode } = useThemeStore((state) => state);
-  const { t } = useTranslation("default");
+  const { t } = useTranslation("menu");
 
   return MENU_ITEMS.map((item) => (
     <MenuItem $darkMode={isDarkMode} href={item.href}>
@@ -43,7 +43,10 @@ const Header = () => {
         <MenuWrapper>
           <RenderMenuItems />
         </MenuWrapper>
-        <LanguageSwitch />
+        <MenuWrapper>
+          <ThemeSwitch />
+          <LanguageSwitch />
+        </MenuWrapper>
       </HeaderWrapper>
     </StyledHeader>
   );

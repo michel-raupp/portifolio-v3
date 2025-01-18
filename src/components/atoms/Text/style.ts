@@ -81,13 +81,11 @@ export const StyledH1 = styled.h1<IStyledText>`
 export const StyledH2 = styled.h2<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   ${getFontSize(TEXT_SIZE.XXXL)};
-
   font-weight: bold;
 `;
 
 export const StyledH3 = styled.h3<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   ${getFontSize(TEXT_SIZE.XL)};
-
   font-weight: bold;
 `;
