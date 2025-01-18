@@ -35,7 +35,8 @@ export const ThemeButton = styled.button<IProps>`
 export const Tooltip = styled.div<IProps>`
   position: absolute;
   top: 150%;
-  z-index: 1;
+  z-index: 20;
+  pointer-events: none;
   visibility: hidden;
   width: 120px;
   background-color: ${({ $darkMode }) =>
