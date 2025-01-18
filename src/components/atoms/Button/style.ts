@@ -44,7 +44,7 @@ const getTextColor = ($darkMode: boolean, color: TButtonColors): string => {
     case BUTTON_COLORS.DARK:
       return $darkMode ? DARK_THEME.text : LIGHT_THEME.background;
     default:
-      return "transparent";
+      return $darkMode ? DARK_THEME.text : LIGHT_THEME.background;
   }
 };
 
@@ -93,5 +93,9 @@ export const StyleButton = styled.button<IStyleButton>`
 
 export const StyledText = styled.p<IStyledText>`
   color: ${({ $darkMode, color }) => getTextColor($darkMode, color)};
-  font-size: ${({ size }) => (size === BUTTON_SIZES.NORMAL ? "16px" : "14px")};
+  font-size: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "16px" : "14px")};
+
+  @media (max-width: 768px) {
+    font-size: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "14px" : "12px")};
+  }
 `;
