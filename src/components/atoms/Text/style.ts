@@ -8,7 +8,7 @@ import { TEXT_SIZE, TTextSize } from "./types";
 interface IStyledText {
   color: TThemeColors;
   size: TTextSize;
-  bold?: boolean;
+  $bold?: boolean;
   $darkMode: boolean;
 }
 
@@ -69,23 +69,23 @@ const getFontSize = (width: TTextSize) => {
 export const StyledText = styled.p<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
-  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
 `;
 
 export const StyledH1 = styled.h1<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
-  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
 `;
 
 export const StyledH2 = styled.h2<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
-  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
 `;
 
 export const StyledH3 = styled.h3<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
   font-size: ${({ size }) => getFontSize(size)};
-  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
 `;

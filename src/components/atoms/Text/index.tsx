@@ -26,27 +26,40 @@ const Text = ({
   const { isDarkMode } = useThemeStore((state) => state);
 
   if (hierarchy === TEXT_HIERARCHIES.HEADING_1) {
-    <StyledH1 $darkMode={isDarkMode} color={color} size="XXXL" bold>
-      {text}
-    </StyledH1>;
+    return (
+      <StyledH1
+        $darkMode={isDarkMode}
+        color={color}
+        size={TEXT_SIZE.XXXL}
+        $bold
+      >
+        {text}
+      </StyledH1>
+    );
   }
   if (hierarchy === TEXT_HIERARCHIES.HEADING_2) {
-    <StyledH2 $darkMode={isDarkMode} color={color} size="XXL" bold>
-      {text}
-    </StyledH2>;
+    return (
+      <StyledH2 $darkMode={isDarkMode} color={color} size={TEXT_SIZE.XXL} $bold>
+        {text}
+      </StyledH2>
+    );
   }
   if (hierarchy === TEXT_HIERARCHIES.HEADING_3) {
-    <StyledH3 $darkMode={isDarkMode} color={color} size="XL" bold>
-      {text}
-    </StyledH3>;
+    return (
+      <StyledH3 $darkMode={isDarkMode} color={color} size={TEXT_SIZE.XXL} $bold>
+        {text}
+      </StyledH3>
+    );
   }
   if (hierarchy === TEXT_HIERARCHIES.LABEL) {
-    <StyledText $darkMode={isDarkMode} color={color} size="S">
-      {text}
-    </StyledText>;
+    return (
+      <StyledText $darkMode={isDarkMode} color={color} size={TEXT_SIZE.S}>
+        {text}
+      </StyledText>
+    );
   }
   return (
-    <StyledText $darkMode={isDarkMode} color={color} size={size} bold={bold}>
+    <StyledText $darkMode={isDarkMode} color={color} size={size} $bold={bold}>
       {text}
     </StyledText>
   );
