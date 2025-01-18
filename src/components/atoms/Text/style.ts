@@ -7,60 +7,60 @@ import { TEXT_SIZE, TTextSize } from "./types";
 
 interface IStyledText {
   color: TThemeColors;
-  size: TTextSize;
+  size?: TTextSize;
   $bold?: boolean;
   $darkMode: boolean;
 }
 
-const getFontSize = (width: TTextSize) => {
-  switch (width) {
+const getFontSize = (size?: TTextSize) => {
+  switch (size) {
     case TEXT_SIZE.XS:
       return `
-      12px;
+      font-size: 12px;
       @media (max-width: 768px) {
-         10px;
+        font-size: 10px;
       }
     `;
     case TEXT_SIZE.S:
       return `
-      14px;
-      @media (max-width: 768px) {
-         12px;
-      }
-    `;
+      font-size: 14px;
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      `;
     case TEXT_SIZE.BASE:
       return `
-       16px;
-        @media (max-width: 768px) {
-           14px;
-        }
-      `;
+      font-size: 16px;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    `;
     case TEXT_SIZE.LG:
       return `
-       18px;
-        @media (max-width: 768px) {
-           16px;
-        }
-      `;
+      font-size: 18px;
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+    `;
     case TEXT_SIZE.XL:
       return `
-       24px;
-        @media (max-width: 768px) {
-           20px;
-        }
-      `;
+      font-size: 24px;
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+    `;
     case TEXT_SIZE.XXL:
       return `
-         32px;
-          @media (max-width: 768px) {
-             24px;
-          }
-        `;
+      font-size: 32px;
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    `;
     default:
       return `
-       16px;
+      font-size: 16px;
         @media (max-width: 768px) {
-           14px;
+          font-size: 14px;
         }
       `;
   }
@@ -68,24 +68,26 @@ const getFontSize = (width: TTextSize) => {
 
 export const StyledText = styled.p<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
-  font-size: ${({ size }) => getFontSize(size)};
+  ${({ size }) => getFontSize(size)};
   font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
 `;
 
 export const StyledH1 = styled.h1<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
-  font-size: ${({ size }) => getFontSize(size)};
-  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
+  ${getFontSize(TEXT_SIZE.XXL)};
+  font-weight: bold;
 `;
 
 export const StyledH2 = styled.h2<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
-  font-size: ${({ size }) => getFontSize(size)};
-  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
+  ${getFontSize(TEXT_SIZE.XXXL)};
+
+  font-weight: bold;
 `;
 
 export const StyledH3 = styled.h3<IStyledText>`
   color: ${({ color, $darkMode }) => getColor(color, $darkMode)};
-  font-size: ${({ size }) => getFontSize(size)};
-  font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
+  ${getFontSize(TEXT_SIZE.XL)};
+
+  font-weight: bold;
 `;

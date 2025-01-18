@@ -27,26 +27,21 @@ const Text = ({
 
   if (hierarchy === TEXT_HIERARCHIES.HEADING_1) {
     return (
-      <StyledH1
-        $darkMode={isDarkMode}
-        color={color}
-        size={TEXT_SIZE.XXXL}
-        $bold
-      >
+      <StyledH1 $darkMode={isDarkMode} color={color}>
         {text}
       </StyledH1>
     );
   }
   if (hierarchy === TEXT_HIERARCHIES.HEADING_2) {
     return (
-      <StyledH2 $darkMode={isDarkMode} color={color} size={TEXT_SIZE.XXL} $bold>
+      <StyledH2 $darkMode={isDarkMode} color={color}>
         {text}
       </StyledH2>
     );
   }
   if (hierarchy === TEXT_HIERARCHIES.HEADING_3) {
     return (
-      <StyledH3 $darkMode={isDarkMode} color={color} size={TEXT_SIZE.XXL} $bold>
+      <StyledH3 $darkMode={isDarkMode} color={color}>
         {text}
       </StyledH3>
     );
