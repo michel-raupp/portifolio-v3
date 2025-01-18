@@ -4,8 +4,7 @@ import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
 
 import { LanguageSwitch, ThemeSwitch } from "@/components/molecules";
-import { TEXT_SIZE } from "@/components/atoms/Text/types";
-import { Text } from "@/components/atoms";
+import { Logo, Text } from "@/components/atoms";
 import { HeaderWrapper, MenuItem, MenuWrapper, StyledHeader } from "./styles";
 
 const MENU_ITEMS = [
@@ -32,14 +31,7 @@ const Header = () => {
   return (
     <StyledHeader $darkMode={isDarkMode}>
       <HeaderWrapper>
-        <a href="#">
-          <Text
-            text="Raupp"
-            bold
-            color={THEME_COLORS.text}
-            size={TEXT_SIZE.XL}
-          />
-        </a>
+        <Logo />
         <MenuWrapper>
           <RenderMenuItems />
         </MenuWrapper>

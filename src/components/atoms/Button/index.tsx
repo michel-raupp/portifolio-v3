@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 
 import { useThemeStore } from "@/stores/theme";
-import { DARK_THEME, LIGHT_THEME } from "@/constants";
 
 import {
   BUTTON_COLORS,
