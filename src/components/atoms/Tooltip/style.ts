@@ -41,19 +41,22 @@ interface ITail {
 
 export const Tail = styled.div<ITail>`
   position: absolute;
-  top: ${({ isTooltipAbove }) => (isTooltipAbove ? "auto" : "0")};
-  bottom: ${({ isTooltipAbove }) => (isTooltipAbove ? "0" : "auto")};
+  top: ${({ isTooltipAbove }) => (isTooltipAbove ? "auto" : "-13.5px")};
+  bottom: ${({ isTooltipAbove }) => (isTooltipAbove ? "-13.5px" : "auto")};
   left: 50%;
   right: 50%;
-  transform: translateX(50%);
+  transform: translateX(50%)
+    ${({ isTooltipAbove }) => (isTooltipAbove ? "scaleY(-1)" : "scaleY(1)")};
+  -webkit-transform: translateX(50%)
+    ${({ isTooltipAbove }) => (isTooltipAbove ? "scaleY(-1)" : "scaleY(1)")};
   clip-path: polygon(0 0, 100% 100%, 0 100%);
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.gray : LIGHT_THEME.background};
   border-radius: 0px 0 0 4px;
   width: 16px;
   height: 16px;
-  top: -13.5px;
-  rotate: ${({ isTooltipAbove }) => (isTooltipAbove ? "-135deg" : "135deg")};
+  rotate: ${({ isTooltipAbove }) => (isTooltipAbove ? "225deg" : "135deg")};
+
   border: 1px solid
     ${({ $darkMode }) =>
       $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
