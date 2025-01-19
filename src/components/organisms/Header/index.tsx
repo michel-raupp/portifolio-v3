@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
 
+import { DropdownMenu } from "@/components/organisms";
 import { LanguageSwitch, ThemeSwitch } from "@/components/molecules";
 import { Logo, Text } from "@/components/atoms";
 import { HeaderWrapper, MenuItem, MenuWrapper, StyledHeader } from "./styles";
@@ -27,6 +29,10 @@ const RenderMenuItems = () => {
 
 const Header = () => {
   const { isDarkMode } = useThemeStore((state) => state);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleOpenMenu = () => setIsMenuOpen(true);
+  const handleCloseMenu = () => setIsMenuOpen(false);
 
   return (
     <StyledHeader $darkMode={isDarkMode}>
@@ -39,6 +45,12 @@ const Header = () => {
           <ThemeSwitch />
           <LanguageSwitch />
         </MenuWrapper>
+        <button onClick={handleOpenMenu}>oieee</button>
+        <DropdownMenu
+          isOpen={isMenuOpen}
+          data={MENU_ITEMS}
+          handleCloseMenu={handleCloseMenu}
+        />
       </HeaderWrapper>
     </StyledHeader>
   );
