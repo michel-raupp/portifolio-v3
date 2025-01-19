@@ -10,7 +10,9 @@ interface IStyledTooltip {
 
 export const StyledTooltip = styled.div<IStyledTooltip>`
   position: absolute;
-  top: ${({ isTooltipAbove }) => (isTooltipAbove ? "-150%" : "150%")};
+  transform: translateY(
+    ${({ isTooltipAbove }) => (isTooltipAbove ? "-56px" : "56px")}
+  );
   z-index: 20;
   pointer-events: none;
   visibility: hidden;
