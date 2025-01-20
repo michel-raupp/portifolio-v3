@@ -5,6 +5,7 @@ import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 
 interface IProps {
   $darkMode: boolean;
+  showText?: boolean;
 }
 
 export const StyledSocial = styled.a<IProps>`
@@ -40,6 +41,8 @@ export const StyledSocial = styled.a<IProps>`
   @media (max-width: 768px) {
     padding: 12px;
 
+    ${({ showText }) => showText && "flex: 1"};
+
     svg {
       width: 24px;
       height: 24px;
@@ -50,11 +53,11 @@ export const StyledSocial = styled.a<IProps>`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 16px;
 
   @media (max-width: 768px) {
     gap: 8px;
+    flex-wrap: wrap;
   }
 `;
 

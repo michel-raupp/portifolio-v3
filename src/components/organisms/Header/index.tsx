@@ -12,9 +12,10 @@ import { Logo, Text } from "@/components/atoms";
 
 import {
   HeaderWrapper,
+  ItemsWrapper,
   MenuButton,
   MenuItem,
-  MenuWrapper,
+  ActionsWrapper,
   StyledHeader,
 } from "./styles";
 
@@ -47,13 +48,13 @@ const Header = () => {
     <StyledHeader $darkMode={isDarkMode}>
       <HeaderWrapper>
         <Logo />
-        <MenuWrapper>
+        <ItemsWrapper>
           <RenderMenuItems />
-        </MenuWrapper>
-        <MenuWrapper>
+        </ItemsWrapper>
+        <ActionsWrapper>
           <ThemeSwitch />
           <LanguageSwitch />
-        </MenuWrapper>
+        </ActionsWrapper>
         <MenuButton onClick={handleOpenMenu} $darkMode={isDarkMode}>
           <IconMenu2
             size={24}

@@ -21,7 +21,7 @@ export const Wrapper = styled.div<IWrapper>`
   width: calc(100% - 16px);
   max-width: 360px;
   height: 100%;
-  padding: 16px 16px 160px 16px;
+  padding: 16px;
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.gray : LIGHT_THEME.background};
   border-left: 1px solid
@@ -38,10 +38,9 @@ export const Wrapper = styled.div<IWrapper>`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex: 1;
   height: 100%;
-  gap: 16px;
+  gap: 64px;
 `;
 
 export const MenuWrapper = styled.div`
@@ -52,6 +51,9 @@ export const MenuWrapper = styled.div`
 `;
 
 export const MenuItem = styled.a<IProps>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-radius: 8px;
   padding: 16px;
   background-color: transparent;
@@ -62,12 +64,12 @@ export const MenuItem = styled.a<IProps>`
     background-color: ${({ $darkMode }) =>
       $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
   }
-`;
 
-export const Actions = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  @media (max-width: 768px) {
+    border: 1px solid
+      ${({ $darkMode }) =>
+        $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
+  }
 `;
 
 export const Background = styled.button<IWrapper>`
@@ -82,4 +84,21 @@ export const Background = styled.button<IWrapper>`
   pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
   opacity: ${({ isOpen }) => (isOpen ? 0.3 : 0)};
   transition: opacity 0.3s;
+`;
+
+export const CloseButton = styled.button<IProps>`
+  display: flex;
+  padding: 8px;
+  width: fit-content;
+  margin-left: auto;
+  border: 1px solid
+    ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
+  border-radius: 8px;
+  transition: opacity 0.3s;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${({ $darkMode }) =>
+      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
+  }
 `;
