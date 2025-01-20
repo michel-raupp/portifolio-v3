@@ -1,13 +1,22 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { IconMenu2 } from "@tabler/icons-react";
 
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
+import { getColor } from "@/helpers";
 
 import { DropdownMenu } from "@/components/organisms";
 import { LanguageSwitch, ThemeSwitch } from "@/components/molecules";
 import { Logo, Text } from "@/components/atoms";
-import { HeaderWrapper, MenuItem, MenuWrapper, StyledHeader } from "./styles";
+
+import {
+  HeaderWrapper,
+  MenuButton,
+  MenuItem,
+  MenuWrapper,
+  StyledHeader,
+} from "./styles";
 
 const MENU_ITEMS = [
   { label: "about", href: "#about" },
@@ -45,7 +54,12 @@ const Header = () => {
           <ThemeSwitch />
           <LanguageSwitch />
         </MenuWrapper>
-        <button onClick={handleOpenMenu}>oieee</button>
+        <MenuButton onClick={handleOpenMenu} $darkMode={isDarkMode}>
+          <IconMenu2
+            size={24}
+            color={getColor(THEME_COLORS.text, isDarkMode)}
+          />
+        </MenuButton>
         <DropdownMenu
           isOpen={isMenuOpen}
           data={MENU_ITEMS}

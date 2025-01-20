@@ -4,7 +4,6 @@ import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
 
 import { TEXT_SIZE } from "@/components/atoms/Text/types";
-import { LanguageSwitch, ThemeSwitch } from "@/components/molecules";
 import { Socials, Text } from "@/components/atoms";
 import {
   Actions,
@@ -14,7 +13,6 @@ import {
   MenuWrapper,
   Wrapper,
 } from "./styles";
-import { IconBrandLinkedin } from "@tabler/icons-react";
 
 interface IData {
   label: string;
@@ -58,11 +56,7 @@ const DropdownMenu = ({ isOpen, data, handleCloseMenu }: IDropdownMenu) => {
             <RenderMenuItems data={data} handleCloseMenu={handleCloseMenu} />
           </MenuWrapper>
           <Actions>
-            <ThemeSwitch />
-            <LanguageSwitch />
-          </Actions>
-          <Actions>
-            <Socials />
+            <Socials showEmailAddress />
           </Actions>
         </Content>
       </Wrapper>

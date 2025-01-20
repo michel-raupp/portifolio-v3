@@ -45,3 +45,17 @@ export const MenuItem = styled.a<IProps>`
       $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
   }
 `;
+
+export const MenuButton = styled.button<IProps>`
+  padding: 8px;
+  border: 1px solid
+    ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
+  border-radius: 8px;
+  transition: opacity 0.3s;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${({ $darkMode }) =>
+      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
+  }
+`;

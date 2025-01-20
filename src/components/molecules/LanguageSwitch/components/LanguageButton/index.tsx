@@ -8,7 +8,7 @@ import EN_FLAG from "@/assets/flags/en-US.png";
 interface ILanguageButton {
   language: TLanguage;
   isDarkMode: boolean;
-  handleOpen: () => void;
+  handleOpen: VoidFunction;
   t: any;
 }
 
@@ -26,7 +26,7 @@ const LanguageButton = ({
       $darkMode={isDarkMode}
       aria-label={t("openLangOptions")}
     >
-      <FlagImg src={flagSrc} alt="flag" $darkMode={isDarkMode} aria-hidden />
+      <FlagImg src={flagSrc} alt="flag" aria-hidden />
     </FlagButton>
   );
 };

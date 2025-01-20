@@ -6,9 +6,13 @@ import {
 import { useThemeStore } from "@/stores";
 
 import { Tooltip } from "@/components/atoms";
-import { StyledSocial, Wrapper } from "./style";
+import { StyledSocial, Wrapper, Text } from "./style";
 
-const Socials = () => {
+interface ISocials {
+  showEmailAddress?: boolean;
+}
+
+const Socials = ({ showEmailAddress }: ISocials) => {
   const { isDarkMode } = useThemeStore((state) => state);
   return (
     <Wrapper>
@@ -34,9 +38,13 @@ const Socials = () => {
         target="blank"
         rel="noopener noreferrer"
         href="mailto:michelraupp@outlook.com"
+        aria-label="Email"
         $darkMode={isDarkMode}
       >
         <IconMail size={24} />
+        {showEmailAddress && (
+          <Text $darkMode={isDarkMode}>michelraupp@outlook.com</Text>
+        )}
         <Tooltip text="Email" isTooltipAbove parentSelector={StyledSocial} />
       </StyledSocial>
     </Wrapper>

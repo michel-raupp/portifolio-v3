@@ -18,8 +18,8 @@ export const Wrapper = styled.div<IWrapper>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 64px);
-  max-width: 480px;
+  width: calc(100% - 16px);
+  max-width: 360px;
   height: 100%;
   padding: 16px 16px 160px 16px;
   background-color: ${({ $darkMode }) =>

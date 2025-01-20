@@ -32,6 +32,10 @@ export const StyledTooltip = styled.div<IStyledTooltip>`
     visibility: visible;
     opacity: 1;
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 interface ITail {

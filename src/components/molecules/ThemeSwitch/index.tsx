@@ -5,6 +5,7 @@ import { useThemeStore } from "@/stores";
 import { DARK_THEME, LIGHT_THEME } from "@/constants";
 
 import { Tooltip } from "@/components/atoms";
+
 import { ThemeButton } from "./styles";
 
 const ThemeSwitch = () => {
@@ -14,21 +15,14 @@ const ThemeSwitch = () => {
 
   return (
     <ThemeButton
+      onClick={toggleTheme}
       $darkMode={isDarkMode}
       aria-label={t(isDarkMode ? "changeThemeToLight" : "changeThemeToDark")}
     >
       {isDarkMode ? (
-        <IconMoonStars
-          onClick={toggleTheme}
-          color={DARK_THEME.text}
-          aria-hidden
-        />
+        <IconMoonStars color={DARK_THEME.text} aria-hidden />
       ) : (
-        <IconBrightnessUp
-          onClick={toggleTheme}
-          color={LIGHT_THEME.background}
-          aria-hidden
-        />
+        <IconBrightnessUp color={LIGHT_THEME.background} aria-hidden />
       )}
 
       <Tooltip
@@ -38,5 +32,4 @@ const ThemeSwitch = () => {
     </ThemeButton>
   );
 };
-
 export default ThemeSwitch;

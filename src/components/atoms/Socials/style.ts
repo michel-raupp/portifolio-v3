@@ -12,6 +12,7 @@ export const StyledSocial = styled.a<IProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   width: fit-content;
   padding: 16px;
   border-radius: 8px;
@@ -55,4 +56,10 @@ export const Wrapper = styled.div`
   @media (max-width: 768px) {
     gap: 8px;
   }
+`;
+
+export const Text = styled.span<IProps>`
+  color: ${({ $darkMode }) =>
+    $darkMode ? DARK_THEME.text : LIGHT_THEME.background};
+  font-size: 12px;
 `;
