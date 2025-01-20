@@ -5,10 +5,12 @@ import LanguageDetector from "i18next-browser-languagedetector";
 // EN
 import ENCommons from "./en/commons.json";
 import ENMenu from "./en/menu.json";
+import ENHero from "./en/hero.json";
 
 // PT
 import PTCommons from "./pt/commons.json";
 import PTMenu from "./pt/menu.json";
+import PTHero from "./pt/hero.json";
 
 const ENDefault = {
   ...ENCommons,
@@ -22,11 +24,13 @@ const resources = {
   "en-US": {
     commons: { ...ENCommons, ...ENDefault },
     menu: { ...ENMenu, ...ENDefault },
+    hero: { ...ENHero, ...ENDefault },
     default: { ...ENDefault },
   },
   "pt-BR": {
     commons: { ...PTCommons, ...PTDefault },
     menu: { ...PTMenu, ...PTDefault },
+    hero: { ...PTHero, ...PTDefault },
     default: { ...PTDefault },
   },
 };

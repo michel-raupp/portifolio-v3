@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { DARK_THEME, LIGHT_THEME } from "@/constants";
+import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 import { TAIL_DIRECTIONS, TTailDirections } from "./types";
+import { getColor } from "@/helpers";
 
 interface IProps {
   $darkMode: boolean;
@@ -14,10 +15,8 @@ export const StyledChat = styled.div<IProps>`
   align-items: center;
   justify-content: center;
   gap: 16px;
-  width: 100%;
+  width: calc(100% - 16px);
   max-width: 478px;
-  padding: ${({ direction }) =>
-    direction === TAIL_DIRECTIONS.LEFT ? "0 0 0 16px" : "0 16px 0 0"};
 
   @media (max-width: 768px) {
     padding: 0;
@@ -33,7 +32,7 @@ export const Bubble = styled.div<IProps>`
   border-radius: 20px;
   gap: 10px;
   background-color: ${({ $darkMode }) =>
-    $darkMode ? DARK_THEME.gray : LIGHT_THEME.lightGray};
+    $darkMode && getColor(THEME_COLORS.lightGray, $darkMode)};
   border-radius: ${({ direction }) =>
     direction === TAIL_DIRECTIONS.LEFT
       ? "0 20px 20px 20px "
@@ -56,7 +55,7 @@ export const Tail = styled.div<IProps>`
   height: 32px;
   clip-path: polygon(0 0, 100% 100%, 0 100%);
   background-color: ${({ $darkMode }) =>
-    $darkMode ? DARK_THEME.gray : LIGHT_THEME.lightGray};
+    $darkMode && getColor(THEME_COLORS.lightGray, $darkMode)};
   border-radius: 4px 4px 0 0;
   rotate: ${({ direction }) =>
     direction === TAIL_DIRECTIONS.LEFT ? "180deg" : "90deg"};
@@ -66,10 +65,8 @@ export const Tail = styled.div<IProps>`
     width: 24px;
     height: 24px;
     top: -12px;
-    left: ${({ direction }) =>
-      direction === TAIL_DIRECTIONS.LEFT ? "48px" : "auto"};
-    right: ${({ direction }) =>
-      direction === TAIL_DIRECTIONS.RIGHT ? "48px" : "auto"};
+    left: 32px;
+    right: auto;
     rotate: 135deg;
   }
 `;
