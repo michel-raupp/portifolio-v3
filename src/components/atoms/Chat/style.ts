@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
+import { THEME_COLORS } from "@/constants";
 import { TAIL_DIRECTIONS, TTailDirections } from "./types";
 import { getColor } from "@/helpers";
 
