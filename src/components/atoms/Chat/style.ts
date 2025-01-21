@@ -33,7 +33,7 @@ export const Bubble = styled.div<IProps>`
   border-radius: 20px;
   gap: 10px;
   background-color: ${({ $darkMode }) =>
-    $darkMode && getColor(THEME_COLORS.lightGray, $darkMode)};
+    getColor(THEME_COLORS.lightGray, $darkMode)};
   border-radius: ${({ direction }) =>
     direction === TAIL_DIRECTIONS.LEFT
       ? "0 20px 20px 20px "
@@ -56,7 +56,7 @@ export const Tail = styled.div<IProps>`
   height: 32px;
   clip-path: polygon(0 0, 100% 100%, 0 100%);
   background-color: ${({ $darkMode }) =>
-    $darkMode && getColor(THEME_COLORS.lightGray, $darkMode)};
+    getColor(THEME_COLORS.lightGray, $darkMode)};
   border-radius: 4px 4px 0 0;
   rotate: ${({ direction }) =>
     direction === TAIL_DIRECTIONS.LEFT ? "180deg" : "90deg"};
