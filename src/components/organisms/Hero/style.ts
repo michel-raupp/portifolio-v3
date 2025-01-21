@@ -28,6 +28,10 @@ export const ChatWrapper = styled.div`
   flex-direction: column;
   gap: 16px;
   width: 480px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const ActionChat = styled.div<IProps>`
@@ -43,6 +47,7 @@ export const ActionChat = styled.div<IProps>`
 
   @media (max-width: 768px) {
     padding: 16px;
+    width: 100%;
     max-width: 478px;
     border-radius: 12px;
   }

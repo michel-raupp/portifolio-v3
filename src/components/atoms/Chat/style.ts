@@ -19,6 +19,7 @@ export const StyledChat = styled.div<IProps>`
   max-width: 478px;
 
   @media (max-width: 768px) {
+    width: 100%;
     padding: 0;
   }
 `;
