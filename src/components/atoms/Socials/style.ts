@@ -38,7 +38,7 @@ export const StyledSocial = styled.a<IProps>`
     height: 32px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 12px;
 
     ${({ showText }) => showText && "flex: 1"};
@@ -55,7 +55,7 @@ export const Wrapper = styled.div`
   align-items: center;
   gap: 16px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 8px;
     flex-wrap: wrap;
   }

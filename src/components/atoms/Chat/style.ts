@@ -16,7 +16,6 @@ export const StyledChat = styled.div<IProps>`
   justify-content: center;
   gap: 16px;
   width: calc(100% - 16px);
-  max-width: 478px;
 
   @media (max-width: 768px) {
     width: 100%;

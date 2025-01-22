@@ -3,7 +3,7 @@ export const LIGHT_THEME = {
   secondary: "#E3DFEF",
   background: "#F9F8FC",
   gray: "#D3D1D9",
-  lightGray: "#D3D1D9",
+  lightGray: "#ECEAF2",
   text: "#040307",
 } as const;
 

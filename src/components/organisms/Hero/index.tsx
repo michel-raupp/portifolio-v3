@@ -8,15 +8,16 @@ import { TAIL_DIRECTIONS } from "@/components/atoms/Chat/types";
 import { Chat, Socials, Text } from "@/components/atoms";
 
 import ProfilePicture from "@/assets/images/profile.png";
-
 import {
   ActionChat,
   ChatWrapper,
   DownloadButton,
   Image,
+  ImageWrapper,
   SocialWrapper,
   Wrapper,
 } from "./style";
+import SenderOrigin from "./components/SenderOrigin";
 
 const Hero = () => {
   const { t } = useTranslation("hero");
@@ -51,12 +52,16 @@ const Hero = () => {
             </DownloadButton>
           </SocialWrapper>
         </ActionChat>
+        <SenderOrigin isDarkMode={isDarkMode} t={t} />
       </ChatWrapper>
-      <Image
-        $darkMode={isDarkMode}
-        src={ProfilePicture}
-        alt={t("profilePicture")}
-      />
+      <ImageWrapper>
+        <Image
+          $darkMode={isDarkMode}
+          src={ProfilePicture}
+          alt={t("profilePicture")}
+        />
+        <SenderOrigin isOnlyMobile isDarkMode={isDarkMode} t={t} />
+      </ImageWrapper>
     </Wrapper>
   );
 };

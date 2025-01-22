@@ -34,12 +34,13 @@ export const WebsiteBody = styled.div<IProps>`
   display: flex;
   flex-direction: column;
   gap: 128px;
-  width: 100%;
+  width: calc(100% - 32px);
   max-width: 1024px;
-  padding: 70px 16px;
+  padding: 70px 0;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
-    padding: 75px 16px;
+    padding: 75px 0;
     gap: 64px;
   }
 `;

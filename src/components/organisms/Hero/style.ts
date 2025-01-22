@@ -1,5 +1,7 @@
-import { DARK_THEME, LIGHT_THEME } from "@/constants";
 import styled from "styled-components";
+
+import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
+import { getColor } from "@/helpers";
 
 interface IProps {
   $darkMode: boolean;
@@ -27,11 +29,7 @@ export const ChatWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 480px;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 export const ActionChat = styled.div<IProps>`
@@ -39,16 +37,14 @@ export const ActionChat = styled.div<IProps>`
   flex-direction: column;
   gap: 16px;
   width: calc(100% - 16px);
-  max-width: 462px;
   padding: 24px;
   border-radius: 16px;
   background-color: ${({ $darkMode }) =>
-    $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray};
+    getColor(THEME_COLORS.lightGray, $darkMode)};
 
   @media (max-width: 768px) {
     padding: 16px;
     width: 100%;
-    max-width: 478px;
     border-radius: 12px;
   }
 `;
@@ -57,6 +53,10 @@ export const SocialWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+
+  @media (max-width: 1024px) {
+    gap: 12px;
+  }
 
   @media (max-width: 768px) {
     gap: 8px;
@@ -89,18 +89,29 @@ export const DownloadButton = styled.a<IProps>`
 
 export const Image = styled.img<IProps>`
   width: 100%;
-  max-width: 480px;
   border-radius: 24px;
   border: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
-
-  @media (max-width: 1024px) {
-    max-width: 320px;
-  }
 
   @media (max-width: 768px) {
     max-width: 96px;
     border-radius: 50%;
     border-width: 2px;
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  max-width: 384px;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    max-width: 280px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: unset;
   }
 `;
