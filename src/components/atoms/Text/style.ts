@@ -44,12 +44,19 @@ const getFontSize = (size?: TTextSize) => {
     `;
     case TEXT_SIZE.XL:
       return `
+      font-size: 20px;
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
+    `;
+    case TEXT_SIZE.XXL:
+      return `
       font-size: 24px;
       @media (max-width: 768px) {
         font-size: 20px;
       }
     `;
-    case TEXT_SIZE.XXL:
+    case TEXT_SIZE.XXXL:
       return `
       font-size: 32px;
       @media (max-width: 768px) {

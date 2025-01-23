@@ -12,8 +12,18 @@ const Logo = () => {
   return (
     <StyledLogo href="#" $darkMode={isDarkMode}>
       <div className="words">
-        <Text text="Raupp" bold color={THEME_COLORS.text} size={TEXT_SIZE.XL} />
-        <Text text="Hello" bold color={THEME_COLORS.text} size={TEXT_SIZE.XL} />
+        <Text
+          text="Raupp"
+          bold
+          color={THEME_COLORS.text}
+          size={TEXT_SIZE.XXL}
+        />
+        <Text
+          text="Hello"
+          bold
+          color={THEME_COLORS.text}
+          size={TEXT_SIZE.XXL}
+        />
       </div>
     </StyledLogo>
   );
