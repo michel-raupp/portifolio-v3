@@ -19,7 +19,7 @@ export const Background = styled.div<IProps>`
       transparent 1%
       )`
       : `${LIGHT_THEME.background} radial-gradient(
-        ${LIGHT_THEME.lightGray} 10%, 
+        ${LIGHT_THEME.gray} 10%, 
         transparent 1%
         )`};
   background-size: 11px 11px;

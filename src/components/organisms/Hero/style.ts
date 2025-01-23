@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   gap: 32px;
   width: 100%;
-  padding: 64px 0;
+  padding-top: 64px;
 
   @media (max-width: 1024px) {
     align-items: flex-start;

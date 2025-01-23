@@ -86,6 +86,7 @@ export const StyleButton = styled.button<IStyleButton>`
   padding: ${({ size }) => getPadding(size)};
   width: ${({ width }) => getWidth(width)};
   border-radius: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "8px" : "4px")};
+
   @media (max-width: 768px) {
     border-radius: 4px;
   }

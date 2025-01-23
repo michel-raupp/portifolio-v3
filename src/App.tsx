@@ -1,6 +1,6 @@
 import { useThemeStore } from "@/stores";
 
-import { Header, Hero } from "./components/organisms";
+import { About, Header, Hero } from "./components/organisms";
 import { Background, WebsiteBody } from "@/components/atoms";
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
       <WebsiteBody $darkMode={isDarkMode}>
         <Header />
         <Hero />
+        <About />
       </WebsiteBody>
       <Background $darkMode={isDarkMode} />
     </>
