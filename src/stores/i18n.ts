@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import i18n from "i18next";
-import { useCallback } from "react";
 
 export const LANGUAGES = {
   EN: "en-US",
