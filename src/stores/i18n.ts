@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import i18n from "i18next";
+import { useCallback } from "react";
 
 export const LANGUAGES = {
   EN: "en-US",
@@ -11,6 +12,7 @@ export type TLanguage = (typeof LANGUAGES)[keyof typeof LANGUAGES];
 interface I18nState {
   language: TLanguage;
   updateLanguage: (value: TLanguage) => void;
+  updateHtmlLang: () => void;
 }
 
 const getInitialLanguage = (): TLanguage => {
@@ -21,11 +23,16 @@ const getInitialLanguage = (): TLanguage => {
   return LANGUAGES.PT;
 };
 
+const updateHtmlLang = () => {
+  const storedLanguage = getInitialLanguage();
+  document.documentElement.lang = storedLanguage.substring(0, 2);
+};
+
 export const useI18nStore = create<I18nState>((set) => ({
   language: getInitialLanguage(),
   updateLanguage: (value: TLanguage) => {
-    // localStorage.setItem("language", value);
     i18n.changeLanguage(value);
     set({ language: value });
   },
+  updateHtmlLang,
 }));

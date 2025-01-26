@@ -1,10 +1,16 @@
-import { useThemeStore } from "@/stores";
+import { useI18nStore, useThemeStore } from "@/stores";
 
 import { About, Experiences, Header, Hero } from "./components/organisms";
 import { Background, WebsiteBody } from "@/components/atoms";
+import { useEffect } from "react";
 
 const App = () => {
   const { isDarkMode } = useThemeStore((state) => state);
+  const { updateHtmlLang, language } = useI18nStore((state) => state);
+
+  useEffect(() => {
+    updateHtmlLang();
+  }, [language]);
 
   return (
     <>
