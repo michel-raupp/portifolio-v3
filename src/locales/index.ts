@@ -7,12 +7,14 @@ import ENCommons from "./en/commons.json";
 import ENMenu from "./en/menu.json";
 import ENHero from "./en/hero.json";
 import ENAbout from "./en/about.json";
+import ENExperiences from "./en/experiences.json";
 
 // PT
 import PTCommons from "./pt/commons.json";
 import PTMenu from "./pt/menu.json";
 import PTHero from "./pt/hero.json";
 import PTAbout from "./pt/about.json";
+import PTExperiences from "./pt/experiences.json";
 
 const ENDefault = {
   ...ENCommons,
@@ -28,6 +30,7 @@ const resources = {
     menu: { ...ENMenu, ...ENDefault },
     hero: { ...ENHero, ...ENDefault },
     about: { ...ENAbout, ...ENDefault },
+    experiences: { ...ENExperiences, ...ENDefault },
     default: { ...ENDefault },
   },
   "pt-BR": {
@@ -35,6 +38,7 @@ const resources = {
     menu: { ...PTMenu, ...PTDefault },
     hero: { ...PTHero, ...PTDefault },
     about: { ...PTAbout, ...PTDefault },
+    experiences: { ...PTExperiences, ...PTDefault },
     default: { ...PTDefault },
   },
 };

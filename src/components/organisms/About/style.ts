@@ -68,6 +68,11 @@ export const Skill = styled.div<IProps>`
     $darkMode ? DARK_THEME.gray : LIGHT_THEME.background};
   border: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    text-align: start;
+  }
 `;
 
 export const IconContainer = styled.div<IProps>`

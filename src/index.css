@@ -72,6 +72,7 @@ h6 {
 ul,
 ol {
   list-style: none;
+  padding: 0;
 }
 
 /* 11. Remove default button styles */

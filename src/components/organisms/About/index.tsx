@@ -21,6 +21,7 @@ const About = () => {
   const { isDarkMode } = useThemeStore((state) => state);
   const { t } = useTranslation("about");
   const skills = getSkillsData(isDarkMode);
+
   return (
     <Wrapper>
       <Col>
