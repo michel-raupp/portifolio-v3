@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
-import { useI18nStore, useThemeStore } from "@/stores";
+import { THEME_COLORS } from "@/constants";
+import { useThemeStore } from "@/stores";
 
 import { TEXT_HIERARCHIES, TEXT_SIZE } from "@/components/atoms/Text/types";
 import { Text } from "@/components/atoms";

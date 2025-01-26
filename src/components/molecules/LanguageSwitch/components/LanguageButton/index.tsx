@@ -9,7 +9,7 @@ interface ILanguageButton {
   language: TLanguage;
   isDarkMode: boolean;
   handleOpen: VoidFunction;
-  t: any;
+  t: (key: string) => string;
 }
 
 const LanguageButton = ({
