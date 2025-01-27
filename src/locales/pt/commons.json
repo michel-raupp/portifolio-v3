@@ -9,5 +9,8 @@
   "changeThemeToDark": "Mudar para tema escuro",
   "changeThemeToLight": "Mudar para tema claro",
   "resume": "Currículo",
-  "downloadCV": "Baixar Currículo"
+  "downloadCV": "Baixar Currículo",
+  "openMenu": "Abrir menu",
+  "closeMenu": "Fechar menu",
+  "goToHome": "home button"
 }

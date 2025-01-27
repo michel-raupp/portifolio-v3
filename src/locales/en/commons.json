@@ -9,5 +9,8 @@
   "changeThemeToDark": "Change to dark theme",
   "changeThemeToLight": "Change to light theme",
   "resume": "Resume",
-  "downloadCV": "Download CV"
+  "downloadCV": "Download CV",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "goToHome": "home button"
 }

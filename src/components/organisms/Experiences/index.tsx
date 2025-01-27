@@ -43,7 +43,7 @@ const Experiences = () => {
             <ItemHeader>
               <Image
                 src={experience.icon}
-                alt={experience.company}
+                alt={t("companyLogo", { company: experience.company })}
                 $darkMode={isDarkMode}
               />
               <ItemTitle>
@@ -57,6 +57,7 @@ const Experiences = () => {
                     text={experience.startDate}
                     hierarchy={TEXT_HIERARCHIES.LABEL}
                     color={THEME_COLORS.text}
+                    aria-label={t("startDate", { date: experience.startDate })}
                   />
                   <Text
                     text="~"
@@ -68,6 +69,7 @@ const Experiences = () => {
                     text={experience.endDate}
                     hierarchy={TEXT_HIERARCHIES.LABEL}
                     color={THEME_COLORS.text}
+                    aria-label={t("endDate", { date: experience.endDate })}
                   />
                 </Date>
               </ItemTitle>
@@ -81,7 +83,7 @@ const Experiences = () => {
               />
               <Text text={experience.resume} color={THEME_COLORS.text} />
             </Resume>
-            <Tags>
+            <Tags aria-label={t("tagsSection")}>
               {experience.tags.map((tag) => (
                 <Tag $darkMode={isDarkMode}>{tag}</Tag>
               ))}

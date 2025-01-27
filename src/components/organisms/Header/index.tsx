@@ -38,6 +38,8 @@ const RenderMenuItems = () => {
 };
 
 const Header = () => {
+  const { t } = useTranslation("menu");
+
   const { isDarkMode } = useThemeStore((state) => state);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -51,11 +53,16 @@ const Header = () => {
         <ItemsWrapper>
           <RenderMenuItems />
         </ItemsWrapper>
-        <ActionsWrapper>
+        <ActionsWrapper aria-hidden={!isMenuOpen}>
           <ThemeSwitch />
           <LanguageSwitch />
         </ActionsWrapper>
-        <MenuButton onClick={handleOpenMenu} $darkMode={isDarkMode}>
+        <MenuButton
+          onClick={handleOpenMenu}
+          $darkMode={isDarkMode}
+          aria-label={t("openMenu")}
+          aria-hidden={!isMenuOpen}
+        >
           <IconMenu2
             size={24}
             color={getColor(THEME_COLORS.text, isDarkMode)}

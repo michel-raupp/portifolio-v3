@@ -8,5 +8,9 @@
   "experienceResume2": "I worked as a mobile developer with React Native in an app aimed at lawyers, serving the Android and iOS platforms. I was mainly involved in developing new features for the app. In parallel, I also worked on creating the admin panel for user management.",
   "experiencePosition3": "Front-end Developer",
   "experienceResume3": "I worked as a frontend developer, developing websites and web applications with Javascript, React.Js and Tailwind for companies through Mercado Shops, Mercado Livre's website platform. I was also involved in creating prototypes in Figma and was responsible for presenting such prototypes to companies.",
-  "internacionalization": "Internacionalization"
+  "internacionalization": "Internacionalization",
+  "startDate": "de {{date}}",
+  "endDate": "até {{date}}",
+  "companyLogo": "Logo of the company {{company}}",
+  "tagsSection": "Technologies developed in the projects"
 }

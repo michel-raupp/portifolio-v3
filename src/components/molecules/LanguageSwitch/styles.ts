@@ -88,6 +88,5 @@ export const Tail = styled.div<IProps>`
   top: -8px;
   rotate: 135deg;
   border: 1px solid
-    ${({ $darkMode }) =>
-      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
+    ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
 `;

@@ -31,7 +31,12 @@ const RenderMenuItems = ({ data, handleCloseMenu, t }: IRenderMenuItems) => {
   const { isDarkMode } = useThemeStore((state) => state);
 
   return data.map((item) => (
-    <MenuItem $darkMode={isDarkMode} href={item.href} onClick={handleCloseMenu}>
+    <MenuItem
+      key={item.label}
+      href={item.href}
+      onClick={handleCloseMenu}
+      $darkMode={isDarkMode}
+    >
       <Text
         text={t(item.label)}
         color={THEME_COLORS.text}
@@ -57,9 +62,13 @@ const DropdownMenu = ({ isOpen, data, handleCloseMenu }: IDropdownMenu) => {
 
   return (
     <>
-      <Wrapper $darkMode={isDarkMode} isOpen={isOpen}>
+      <Wrapper $darkMode={isDarkMode} isOpen={isOpen} tabIndex={0}>
         <Content>
-          <CloseButton onClick={handleCloseMenu} $darkMode={isDarkMode}>
+          <CloseButton
+            onClick={handleCloseMenu}
+            $darkMode={isDarkMode}
+            aria-label={t("closeMenu")}
+          >
             <IconX size={24} color={getColor(THEME_COLORS.text, isDarkMode)} />
           </CloseButton>
           <MenuWrapper>
@@ -76,6 +85,7 @@ const DropdownMenu = ({ isOpen, data, handleCloseMenu }: IDropdownMenu) => {
         $darkMode={isDarkMode}
         isOpen={isOpen}
         onClick={handleCloseMenu}
+        aria-label={t("closeMenu")}
       />
     </>
   );
