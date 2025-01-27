@@ -20,6 +20,7 @@ const Socials = ({ showText }: ISocials) => {
         target="blank"
         rel="noopener noreferrer"
         href="https://www.linkedin.com/in/michelraupp/"
+        aria-label="LinkedIn"
         $darkMode={isDarkMode}
         showText={showText}
       >
@@ -31,6 +32,7 @@ const Socials = ({ showText }: ISocials) => {
         target="blank"
         rel="noopener noreferrer"
         href="https://github.com/michel-raupp"
+        aria-label="Github"
         $darkMode={isDarkMode}
         showText={showText}
       >
