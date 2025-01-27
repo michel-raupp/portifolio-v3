@@ -53,7 +53,7 @@ const Header = () => {
         <ItemsWrapper>
           <RenderMenuItems />
         </ItemsWrapper>
-        <ActionsWrapper aria-hidden={!isMenuOpen}>
+        <ActionsWrapper aria-hidden={isMenuOpen}>
           <ThemeSwitch />
           <LanguageSwitch />
         </ActionsWrapper>
@@ -61,7 +61,7 @@ const Header = () => {
           onClick={handleOpenMenu}
           $darkMode={isDarkMode}
           aria-label={t("openMenu")}
-          aria-hidden={!isMenuOpen}
+          aria-hidden={isMenuOpen}
         >
           <IconMenu2
             size={24}
