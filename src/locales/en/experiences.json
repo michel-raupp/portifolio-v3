@@ -9,8 +9,7 @@
   "experiencePosition3": "Front-end Developer",
   "experienceResume3": "I worked as a frontend developer, developing websites and web applications with Javascript, React.Js and Tailwind for companies through Mercado Shops, Mercado Livre's website platform. I was also involved in creating prototypes in Figma and was responsible for presenting such prototypes to companies.",
   "internacionalization": "Internacionalization",
-  "startDate": "de {{date}}",
-  "endDate": "até {{date}}",
+  "experienceDate": "de {{startDate}}, até {{endDate}}",
   "companyLogo": "Logo of the company {{company}}",
   "tagsSection": "Technologies developed in the projects"
 }

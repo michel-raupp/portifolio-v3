@@ -52,12 +52,16 @@ const Experiences = () => {
                   color={THEME_COLORS.text}
                   hierarchy={TEXT_HIERARCHIES.HEADING_3}
                 />
-                <Date>
+                <Date
+                  aria-label={t("experienceDate", {
+                    startDate: experience.startDate,
+                    endDate: experience.endDate,
+                  })}
+                >
                   <Text
                     text={experience.startDate}
                     hierarchy={TEXT_HIERARCHIES.LABEL}
                     color={THEME_COLORS.text}
-                    aria-label={t("startDate", { date: experience.startDate })}
                   />
                   <Text
                     text="~"
@@ -69,7 +73,6 @@ const Experiences = () => {
                     text={experience.endDate}
                     hierarchy={TEXT_HIERARCHIES.LABEL}
                     color={THEME_COLORS.text}
-                    aria-label={t("endDate", { date: experience.endDate })}
                   />
                 </Date>
               </ItemTitle>
