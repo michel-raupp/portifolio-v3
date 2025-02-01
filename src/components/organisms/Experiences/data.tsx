@@ -5,12 +5,22 @@ import companyImage1 from "@/assets/images/company-1.jpg";
 import companyImage2 from "@/assets/images/company-2.jpg";
 import companyImage3 from "@/assets/images/company-3.jpg";
 
+interface IDateOptions {
+  year: "numeric";
+  month: "short";
+}
+
 export const getExperiencesData = () => {
   const { t } = useTranslation("experiences");
   const { language } = useI18nStore((state) => state);
 
   const convertToDate = (date: Date) => {
-    return date.toLocaleDateString(language);
+    const dateOptions = {
+      year: "numeric",
+      month: "short",
+    } as IDateOptions;
+
+    return date.toLocaleDateString(language, dateOptions);
   };
 
   return [
