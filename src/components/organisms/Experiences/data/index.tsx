@@ -10,6 +10,16 @@ interface IDateOptions {
   month: "short";
 }
 
+export interface IExperience {
+  company: string;
+  icon: string;
+  position: string;
+  startDate: string;
+  endDate: string;
+  resume: string;
+  tags: string[];
+}
+
 export const getExperiencesData = () => {
   const { t } = useTranslation("experiences");
   const { language } = useI18nStore((state) => state);
@@ -58,10 +68,10 @@ export const getExperiencesData = () => {
       company: "Digital Growth",
       icon: companyImage3,
       position: t("experiencePosition3"),
-      startDate: convertToDate(new Date("2024-05")),
-      endDate: convertToDate(new Date("2023-04")),
+      startDate: convertToDate(new Date("2023-04")),
+      endDate: convertToDate(new Date("2024-05")),
       resume: t("experienceResume3"),
       tags: ["React.js", "Javascript", "Tailwind", "HTML/CSS", "UX/UI"],
     },
-  ];
+  ] as IExperience[];
 };
