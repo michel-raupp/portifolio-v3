@@ -39,7 +39,7 @@ const Experiences = () => {
       </Col>
       <List>
         {experiences.map((experience) => (
-          <Item $darkMode={isDarkMode} key={experience.company}>
+          <Item key={experience.company} $darkMode={isDarkMode}>
             <ItemHeader>
               <Image
                 src={experience.icon}
@@ -88,7 +88,9 @@ const Experiences = () => {
             </Resume>
             <Tags aria-label={t("tagsSection")}>
               {experience.tags.map((tag) => (
-                <Tag $darkMode={isDarkMode}>{tag}</Tag>
+                <Tag key={tag} $darkMode={isDarkMode}>
+                  {tag}
+                </Tag>
               ))}
             </Tags>
           </Item>
