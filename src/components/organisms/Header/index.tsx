@@ -31,7 +31,7 @@ const RenderMenuItems = () => {
   const { t } = useTranslation("menu");
 
   return MENU_ITEMS.map((item) => (
-    <MenuItem $darkMode={isDarkMode} href={item.href}>
+    <MenuItem key={item.label} $darkMode={isDarkMode} href={item.href}>
       <Text text={t(item.label)} color={THEME_COLORS.text} />
     </MenuItem>
   ));

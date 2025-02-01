@@ -17,11 +17,11 @@ const Tooltip = ({ text, isTooltipAbove, parentSelector }: ITooltip) => {
   return (
     <StyledTooltip
       $darkMode={isDarkMode}
-      isTooltipAbove={isTooltipAbove}
-      parentSelector={parentSelector}
+      $isTooltipAbove={isTooltipAbove}
+      $parentSelector={parentSelector}
       aria-hidden
     >
-      <Tail $darkMode={isDarkMode} isTooltipAbove={isTooltipAbove} />
+      <Tail $darkMode={isDarkMode} $isTooltipAbove={isTooltipAbove} />
       <Text text={text} size={TEXT_SIZE.S} />
     </StyledTooltip>
   );

@@ -64,7 +64,7 @@ const DropdownMenu = ({ isOpen, data, handleCloseMenu }: IDropdownMenu) => {
     <>
       <Wrapper
         $darkMode={isDarkMode}
-        isOpen={isOpen}
+        $isOpen={isOpen}
         tabIndex={0}
         aria-hidden={!isOpen}
       >
@@ -88,7 +88,7 @@ const DropdownMenu = ({ isOpen, data, handleCloseMenu }: IDropdownMenu) => {
       </Wrapper>
       <Background
         $darkMode={isDarkMode}
-        isOpen={isOpen}
+        $isOpen={isOpen}
         onClick={handleCloseMenu}
         aria-label={t("closeMenu")}
         aria-hidden={!isOpen}

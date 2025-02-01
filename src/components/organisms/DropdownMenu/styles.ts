@@ -7,7 +7,7 @@ interface IProps {
 
 interface IWrapper {
   $darkMode: boolean;
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 export const Wrapper = styled.div<IWrapper>`
@@ -27,8 +27,8 @@ export const Wrapper = styled.div<IWrapper>`
   border-left: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
   transition: transform 0.8s;
-  transform: ${({ isOpen }) =>
-    isOpen ? "translateX(0%)" : "translateX(100%)"};
+  transform: ${({ $isOpen }) =>
+    $isOpen ? "translateX(0%)" : "translateX(100%)"};
 
   @media (min-width: 768px) {
     display: none;
@@ -81,8 +81,8 @@ export const Background = styled.button<IWrapper>`
   height: 100%;
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.primary : LIGHT_THEME.primary};
-  pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
-  opacity: ${({ isOpen }) => (isOpen ? 0.3 : 0)};
+  pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
+  opacity: ${({ $isOpen }) => ($isOpen ? 0.3 : 0)};
   transition: opacity 0.3s;
 `;
 

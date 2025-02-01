@@ -22,7 +22,7 @@ const Socials = ({ showText }: ISocials) => {
         href="https://www.linkedin.com/in/michelraupp/"
         aria-label="LinkedIn"
         $darkMode={isDarkMode}
-        showText={showText}
+        $showText={showText}
       >
         <IconBrandLinkedin size={24} />
         {showText && <Text $darkMode={isDarkMode}>Linkedin</Text>}
@@ -34,7 +34,7 @@ const Socials = ({ showText }: ISocials) => {
         href="https://github.com/michel-raupp"
         aria-label="Github"
         $darkMode={isDarkMode}
-        showText={showText}
+        $showText={showText}
       >
         <IconBrandGithub size={24} />
         {showText && <Text $darkMode={isDarkMode}>Github</Text>}
@@ -46,7 +46,7 @@ const Socials = ({ showText }: ISocials) => {
         href="mailto:michelraupp@outlook.com"
         aria-label="Email"
         $darkMode={isDarkMode}
-        showText={showText}
+        $showText={showText}
       >
         <IconMail size={24} />
         {showText && (

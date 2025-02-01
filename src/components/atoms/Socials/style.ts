@@ -5,7 +5,7 @@ import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 
 interface IProps {
   $darkMode: boolean;
-  showText?: boolean;
+  $showText?: boolean;
 }
 
 export const StyledSocial = styled.a<IProps>`
@@ -41,7 +41,7 @@ export const StyledSocial = styled.a<IProps>`
   @media (max-width: 1024px) {
     padding: 12px;
 
-    ${({ showText }) => showText && "flex: 1"};
+    ${({ $showText }) => $showText && "flex: 1"};
 
     svg {
       width: 24px;
