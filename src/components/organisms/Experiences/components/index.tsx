@@ -19,35 +19,35 @@ import {
 } from "./style";
 
 interface IExperienceItem {
-  experience: IExperience;
+  data: IExperience;
 }
 
-const ExperienceItem = ({ experience }: IExperienceItem) => {
+const ExperienceItem = ({ data }: IExperienceItem) => {
   const { t } = useTranslation("experiences");
   const { isDarkMode } = useThemeStore((state) => state);
 
   return (
-    <Item key={experience.company} $darkMode={isDarkMode}>
+    <Item key={data.company} $darkMode={isDarkMode}>
       <ItemHeader>
         <Image
-          src={experience.icon}
-          alt={t("companyLogo", { company: experience.company })}
+          src={data.icon}
+          alt={t("companyLogo", { company: data.company })}
           $darkMode={isDarkMode}
         />
         <ItemTitle>
           <Text
-            text={experience.company}
+            text={data.company}
             color={THEME_COLORS.text}
             hierarchy={TEXT_HIERARCHIES.HEADING_3}
           />
           <Date
             aria-label={t("experienceDate", {
-              startDate: experience.startDate,
-              endDate: experience.endDate,
+              startDate: data.startDate,
+              endDate: data.endDate,
             })}
           >
             <Text
-              text={experience.startDate}
+              text={data.startDate}
               hierarchy={TEXT_HIERARCHIES.LABEL}
               color={THEME_COLORS.text}
             />
@@ -58,7 +58,7 @@ const ExperienceItem = ({ experience }: IExperienceItem) => {
               aria-hidden="true"
             />
             <Text
-              text={experience.endDate}
+              text={data.endDate}
               hierarchy={TEXT_HIERARCHIES.LABEL}
               color={THEME_COLORS.text}
             />
@@ -67,15 +67,15 @@ const ExperienceItem = ({ experience }: IExperienceItem) => {
       </ItemHeader>
       <Resume>
         <Text
-          text={experience.position}
+          text={data.position}
           color={THEME_COLORS.text}
           size={TEXT_SIZE.XL}
           bold
         />
-        <Text text={experience.resume} color={THEME_COLORS.text} />
+        <Text text={data.resume} color={THEME_COLORS.text} />
       </Resume>
       <Tags aria-label={t("tagsSection")}>
-        {experience.tags.map((tag) => (
+        {data.tags.map((tag) => (
           <Tag key={tag} $darkMode={isDarkMode}>
             {tag}
           </Tag>
