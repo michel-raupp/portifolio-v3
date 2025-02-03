@@ -1,6 +1,12 @@
 import { useI18nStore, useThemeStore } from "@/stores";
 
-import { About, Experiences, Header, Hero } from "./components/organisms";
+import {
+  About,
+  Experiences,
+  Header,
+  Hero,
+  Projects,
+} from "@/components/organisms";
 import { Background, WebsiteBody } from "@/components/atoms";
 import { useEffect } from "react";
 
@@ -19,6 +25,7 @@ const App = () => {
         <Hero />
         <About />
         <Experiences />
+        <Projects />
       </WebsiteBody>
       <Background $darkMode={isDarkMode} />
     </>
