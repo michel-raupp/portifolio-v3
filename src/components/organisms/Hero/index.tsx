@@ -24,7 +24,7 @@ const Hero = () => {
   const { isDarkMode } = useThemeStore((state) => state);
 
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <ChatWrapper>
         <Chat
           direction={TAIL_DIRECTIONS.RIGHT}

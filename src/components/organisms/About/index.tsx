@@ -23,7 +23,7 @@ const About = () => {
   const skills = getSkillsData(isDarkMode);
 
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <Col>
         <Text
           hierarchy={TEXT_HIERARCHIES.HEADING_2}

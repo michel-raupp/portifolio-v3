@@ -13,9 +13,10 @@ const Experiences = () => {
     <Section
       title={t("experienceTitle")}
       description={t("experienceDescription")}
+      id="experience"
     >
       {experiences.map((experience) => (
-        <ExperienceItem key={experience.company} experience={experience} />
+        <ExperienceItem key={experience.company} data={experience} />
       ))}
     </Section>
   );
