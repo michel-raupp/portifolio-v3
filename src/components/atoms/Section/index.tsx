@@ -10,6 +10,7 @@ interface ISection {
   title: string;
   description: string;
   isHorizontalList?: boolean;
+  id: string;
   children: ReactNode;
 }
 
@@ -17,10 +18,11 @@ const Section = ({
   title,
   description,
   isHorizontalList,
+  id,
   children,
 }: ISection) => {
   return (
-    <Wrapper>
+    <Wrapper id={id}>
       <Col>
         <Text
           hierarchy={TEXT_HIERARCHIES.HEADING_2}
