@@ -50,8 +50,10 @@ const getTextColor = ($darkMode: boolean, color: TButtonColors): string => {
 
 const getPadding = (size: TButtonSizes) => {
   switch (size) {
+    case BUTTON_SIZES.SMALL:
+      return " 8px";
     case BUTTON_SIZES.NORMAL:
-      return "16px 8px";
+      return "8px 16px";
     case BUTTON_SIZES.LARGE:
       return `
         16px;
@@ -60,7 +62,7 @@ const getPadding = (size: TButtonSizes) => {
         }
       `;
     default:
-      return "8px";
+      return "8px 16px";
   }
 };
 

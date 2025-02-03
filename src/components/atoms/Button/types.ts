@@ -5,6 +5,7 @@ export const BUTTON_COLORS = {
 } as const;
 
 export const BUTTON_SIZES = {
+  SMALL: "SMALL",
   NORMAL: "NORMAL",
   LARGE: "LARGE",
 } as const;
