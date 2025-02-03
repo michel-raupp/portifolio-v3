@@ -29,18 +29,26 @@ export const Col = styled.div`
 
 export const List = styled.ul<IList>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ $isHorizontalList }) =>
+    $isHorizontalList ? "row" : "column"};
   gap: 32px;
   width: 100%;
+  overflow: ${({ $isHorizontalList }) =>
+    $isHorizontalList ? "scroll" : "visible"};
 
   ${({ $isHorizontalList }) =>
     $isHorizontalList &&
     `
-        flex-direction: row;
-        overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -ms-scroll-snap-type: mandatory;
+      scroll-snap-points-x: repeat(100%);
+      -ms-scroll-snap-points-x: repeat(100%);
+      -webkit-overflow-scrolling: touch;
+      scroll-margin: 0 32px;
+      padding-bottom: 16px;
     `}
 
   @media (max-width: 768px) {
-    gap: 16px;
+    gap: ${({ $isHorizontalList }) => ($isHorizontalList ? "8px" : "16px")};
   }
 `;
