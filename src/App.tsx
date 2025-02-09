@@ -1,13 +1,13 @@
 import { useI18nStore, useThemeStore } from "@/stores";
 
+import { Header } from "@/components/organisms";
 import {
   About,
   Contact,
   Experiences,
-  Header,
   Hero,
   Projects,
-} from "@/components/organisms";
+} from "@/components/sections";
 import { Background, WebsiteBody } from "@/components/atoms";
 import { useEffect } from "react";
 
