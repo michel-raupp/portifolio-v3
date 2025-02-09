@@ -37,10 +37,6 @@ export const StyledModal = styled.div<IProps>`
   width: 100%;
   height: fit-content;
   overflow-y: scroll;
-
-  @media (max-width: 480px) {
-    height: 100%;
-  }
 `;
 
 export const Background = styled.button<IProps>`
@@ -98,10 +94,6 @@ export const Tag = styled.span<IProps>`
 export const Actions = styled.div`
   display: flex;
   gap: 8px;
-
-  @media (max-width: 480px) {
-    margin-top: auto;
-  }
 `;
 
 export const Date = styled.div`
