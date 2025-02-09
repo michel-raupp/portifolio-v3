@@ -15,6 +15,7 @@ export interface IProject {
   github?: string;
   demo: string;
   tags: string[];
+  lessons: string;
 }
 
 export const getProjectsData = () => {
@@ -30,6 +31,7 @@ export const getProjectsData = () => {
       tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "Context API"],
       github: "https://github.com/michel-raupp/project-2d",
       demo: "https://project-2d.vercel.app/",
+      lessons: t("projectLessons1"),
     },
     {
       name: t("projectName2"),
@@ -47,6 +49,7 @@ export const getProjectsData = () => {
         "Third-party API",
       ],
       demo: "https://valorant-project-alpha.vercel.app/",
+      lessons: t("projectLessons2"),
     },
     {
       name: t("projectName3"),
@@ -56,6 +59,7 @@ export const getProjectsData = () => {
       date: convertToDate(new Date("2023-03")),
       tags: ["React", "Javascript", "Styled Components", "LocalStorage"],
       demo: "https://project-pizzaria.vercel.app/",
+      lessons: t("projectLessons3"),
     },
   ] as IProject[];
 };

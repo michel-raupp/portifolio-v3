@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Section } from "@/components/atoms";
 
 import { getProjectsData } from "./data";
-import ProjectItem from "./components";
+import { ProjectItem } from "./components";
 
 const Projects = () => {
   const { t } = useTranslation("projects");
