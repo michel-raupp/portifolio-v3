@@ -2,9 +2,9 @@ import { useTranslation } from "react-i18next";
 
 import { convertToDate } from "@/helpers";
 
-import projectImage1 from "@/assets/images/project-1.png";
-import projectImage2 from "@/assets/images/project-2.png";
-import projectImage3 from "@/assets/images/project-3.png";
+import projectImage1 from "@/assets/images/project-1.webp";
+import projectImage2 from "@/assets/images/project-2.webp";
+import projectImage3 from "@/assets/images/project-3.webp";
 
 export interface IProject {
   name: string;

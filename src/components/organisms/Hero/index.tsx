@@ -7,7 +7,7 @@ import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 import { TAIL_DIRECTIONS } from "@/components/atoms/Chat/types";
 import { Chat, Socials, Text } from "@/components/atoms";
 
-import ProfilePicture from "@/assets/images/profile.png";
+import ProfilePicture from "@/assets/images/profile.webp";
 import {
   ActionChat,
   ChatWrapper,

@@ -2,9 +2,9 @@ import { useTranslation } from "react-i18next";
 
 import { convertToDate } from "@/helpers";
 
-import companyImage1 from "@/assets/images/company-1.jpg";
-import companyImage2 from "@/assets/images/company-2.jpg";
-import companyImage3 from "@/assets/images/company-3.jpg";
+import companyImage1 from "@/assets/images/company-1.webp";
+import companyImage2 from "@/assets/images/company-2.webp";
+import companyImage3 from "@/assets/images/company-3.webp";
 
 export interface IExperience {
   company: string;
