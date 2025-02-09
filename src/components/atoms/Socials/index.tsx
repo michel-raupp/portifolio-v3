@@ -12,48 +12,44 @@ interface ISocials {
   showText?: boolean;
 }
 
+const socialLinks = [
+  {
+    href: "https://www.linkedin.com/in/michelraupp/",
+    label: "LinkedIn",
+    icon: IconBrandLinkedin,
+  },
+  {
+    href: "https://github.com/michel-raupp",
+    label: "Github",
+    icon: IconBrandGithub,
+  },
+  {
+    href: "mailto:michelraupp@outlook.com",
+    label: "Email",
+    icon: IconMail,
+  },
+];
+
 const Socials = ({ showText }: ISocials) => {
   const { isDarkMode } = useThemeStore((state) => state);
+
   return (
     <Wrapper>
-      <StyledSocial
-        target="blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/michelraupp/"
-        aria-label="LinkedIn"
-        $darkMode={isDarkMode}
-        $showText={showText}
-      >
-        <IconBrandLinkedin size={24} />
-        {showText && <Text $darkMode={isDarkMode}>Linkedin</Text>}
-        <Tooltip text="LinkedIn" isTooltipAbove parentSelector={StyledSocial} />
-      </StyledSocial>
-      <StyledSocial
-        target="blank"
-        rel="noopener noreferrer"
-        href="https://github.com/michel-raupp"
-        aria-label="Github"
-        $darkMode={isDarkMode}
-        $showText={showText}
-      >
-        <IconBrandGithub size={24} />
-        {showText && <Text $darkMode={isDarkMode}>Github</Text>}
-        <Tooltip text="Github" isTooltipAbove parentSelector={StyledSocial} />
-      </StyledSocial>
-      <StyledSocial
-        target="blank"
-        rel="noopener noreferrer"
-        href="mailto:michelraupp@outlook.com"
-        aria-label="Email"
-        $darkMode={isDarkMode}
-        $showText={showText}
-      >
-        <IconMail size={24} />
-        {showText && (
-          <Text $darkMode={isDarkMode}>michelraupp@outlook.com</Text>
-        )}
-        <Tooltip text="Email" isTooltipAbove parentSelector={StyledSocial} />
-      </StyledSocial>
+      {socialLinks.map(({ href, label, icon: Icon }) => (
+        <StyledSocial
+          key={href}
+          target="blank"
+          rel="noopener noreferrer"
+          href={href}
+          aria-label={label}
+          $darkMode={isDarkMode}
+          $showText={showText}
+        >
+          <Icon size={24} />
+          {showText && <Text $darkMode={isDarkMode}>{label}</Text>}
+          <Tooltip text={label} isTooltipAbove parentSelector={StyledSocial} />
+        </StyledSocial>
+      ))}
     </Wrapper>
   );
 };

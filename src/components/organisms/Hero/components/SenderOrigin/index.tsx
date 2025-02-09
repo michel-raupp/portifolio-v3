@@ -38,7 +38,9 @@ const SenderOrigin = ({ isOnlyMobile, isDarkMode, t }: ISendOrigin) => {
         size={TEXT_SIZE.S}
         bold
       />
-      <p aria-hidden>-</p>
+      <div aria-hidden>
+        <Text text="-" color={THEME_COLORS.text} size={TEXT_SIZE.S} bold />
+      </div>
       <Text
         text={t("personalInfo")}
         color={THEME_COLORS.text}
