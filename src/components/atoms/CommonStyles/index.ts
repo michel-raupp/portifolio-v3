@@ -36,11 +36,11 @@ export const WebsiteBody = styled.div<IProps>`
   align-items: center;
   gap: 128px;
   width: 100%;
-  padding: 70px 0;
+  padding-top: 70px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    padding: 75px 0;
+    padding-top: 75px;
     gap: 64px;
   }
 `;

@@ -8,7 +8,7 @@ import {
   Hero,
   Projects,
 } from "@/components/sections";
-import { Background, WebsiteBody } from "@/components/atoms";
+import { Background, Footer, WebsiteBody } from "@/components/atoms";
 import { useEffect } from "react";
 
 const App = () => {
@@ -28,6 +28,7 @@ const App = () => {
         <Experiences />
         <Projects />
         <Contact />
+        <Footer />
       </WebsiteBody>
       <Background $darkMode={isDarkMode} />
     </>

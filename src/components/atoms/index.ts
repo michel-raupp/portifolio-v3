@@ -5,4 +5,5 @@ export { default as Logo } from "./Logo";
 export { default as Socials } from "./Socials";
 export { default as Tooltip } from "./Tooltip";
 export { default as Section } from "./Section";
+export { default as Footer } from "./Footer";
 export * from "./CommonStyles";
