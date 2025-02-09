@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { DARK_THEME, LIGHT_THEME } from "@/constants";
 
 import {
@@ -77,7 +77,7 @@ const getWidth = (width: TButtonWidth) => {
   }
 };
 
-export const StyleButton = styled.button<IStyleButton>`
+const sharedStyles = css<IStyleButton>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,8 +94,12 @@ export const StyleButton = styled.button<IStyleButton>`
   }
 `;
 
+export const StyleButton = styled.button<IStyleButton>`
+  ${sharedStyles}
+`;
+
 export const StyledAnchor = styled.a<IStyleButton>`
-  ${StyleButton}
+  ${sharedStyles}
 `;
 
 export const StyledText = styled.p<IStyledText>`
