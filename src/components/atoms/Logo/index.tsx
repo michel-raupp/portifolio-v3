@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
 
@@ -5,7 +7,6 @@ import { TEXT_SIZE } from "../Text/types";
 import { Text } from "@/components/atoms";
 
 import { StyledLogo } from "./style";
-import { useTranslation } from "react-i18next";
 
 const Logo = () => {
   const { isDarkMode } = useThemeStore((state) => state);

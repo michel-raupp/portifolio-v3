@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
   gap: 32px;
   width: calc(100% - 32px);
   max-width: 1024px;
-  padding-bottom: 64px;
 
   @media (max-width: 1024px) {
     align-items: flex-start;
@@ -22,7 +21,6 @@ export const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding-top: 32px;
   }
 `;
 
@@ -90,23 +88,12 @@ export const DownloadButton = styled.a<IProps>`
 
 export const Image = styled.img<IProps>`
   width: 100%;
+  max-width: 384px;
   border-radius: 24px;
   border: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
-`;
-
-export const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  max-width: 384px;
-  width: 100%;
 
   @media (max-width: 1024px) {
     max-width: 280px;
-  }
-
-  @media (max-width: 768px) {
-    max-width: unset;
   }
 `;

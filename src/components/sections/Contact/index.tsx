@@ -13,7 +13,6 @@ import {
   ChatWrapper,
   DownloadButton,
   Image,
-  ImageWrapper,
   SocialWrapper,
   Wrapper,
 } from "./style";
@@ -24,13 +23,11 @@ const Contact = () => {
 
   return (
     <Wrapper id="contact">
-      <ImageWrapper>
-        <Image
-          $darkMode={isDarkMode}
-          src={CatPicture}
-          alt={t("profilePicture")}
-        />
-      </ImageWrapper>
+      <Image
+        $darkMode={isDarkMode}
+        src={CatPicture}
+        alt={t("profilePicture")}
+      />
       <ChatWrapper>
         <Chat
           direction={TAIL_DIRECTIONS.LEFT}
