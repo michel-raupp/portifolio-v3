@@ -96,4 +96,8 @@ export const Image = styled.img<IProps>`
   @media (max-width: 1024px) {
     max-width: 280px;
   }
+
+  @media (max-width: 480px) {
+    max-width: unset;
+  }
 `;
