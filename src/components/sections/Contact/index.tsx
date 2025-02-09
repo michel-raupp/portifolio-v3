@@ -1,21 +1,14 @@
 import { useTranslation } from "react-i18next";
-import { IconDownload } from "@tabler/icons-react";
 
 import { useThemeStore } from "@/stores";
-import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 
 import { TAIL_DIRECTIONS } from "@/components/atoms/Chat/types";
-import { Chat, Socials, Text } from "@/components/atoms";
+import { ActionChat } from "@/components/molecules";
+import { Chat } from "@/components/atoms";
+
+import { ChatWrapper, Image, Wrapper } from "./style";
 
 import CatPicture from "@/assets/images/cat.webp";
-import {
-  ActionChat,
-  ChatWrapper,
-  DownloadButton,
-  Image,
-  SocialWrapper,
-  Wrapper,
-} from "./style";
 
 const Contact = () => {
   const { t } = useTranslation("contact");
@@ -34,27 +27,7 @@ const Contact = () => {
           title={t("contactTitle")}
           text={t("contactText1")}
         />
-        <ActionChat $darkMode={isDarkMode}>
-          <Text text={t("contactText2")} color={THEME_COLORS.text} />
-          <SocialWrapper>
-            <Socials />
-            <DownloadButton
-              $darkMode={isDarkMode}
-              href="/resume.pdf"
-              download
-              aria-label={t("resume")}
-            >
-              <Text
-                text={t("resume")}
-                color={isDarkMode ? THEME_COLORS.text : THEME_COLORS.background}
-              />
-              <IconDownload
-                size={24}
-                color={isDarkMode ? DARK_THEME.text : LIGHT_THEME.background}
-              />
-            </DownloadButton>
-          </SocialWrapper>
-        </ActionChat>
+        <ActionChat text={t("contactText2")} />
       </ChatWrapper>
     </Wrapper>
   );
