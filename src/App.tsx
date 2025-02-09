@@ -2,6 +2,7 @@ import { useI18nStore, useThemeStore } from "@/stores";
 
 import {
   About,
+  Contact,
   Experiences,
   Header,
   Hero,
@@ -26,6 +27,7 @@ const App = () => {
         <About />
         <Experiences />
         <Projects />
+        <Contact />
       </WebsiteBody>
       <Background $darkMode={isDarkMode} />
     </>

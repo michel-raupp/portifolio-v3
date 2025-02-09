@@ -9,6 +9,7 @@ import ENHero from "./en/hero.json";
 import ENAbout from "./en/about.json";
 import ENExperiences from "./en/experiences.json";
 import ENProjects from "./en/projects.json";
+import ENContact from "./en/contact.json";
 
 // PT
 import PTCommons from "./pt/commons.json";
@@ -17,6 +18,7 @@ import PTHero from "./pt/hero.json";
 import PTAbout from "./pt/about.json";
 import PTExperiences from "./pt/experiences.json";
 import PTProjects from "./pt/projects.json";
+import PTContact from "./pt/contact.json";
 
 const ENDefault = {
   ...ENCommons,
@@ -34,6 +36,7 @@ const resources = {
     about: { ...ENAbout, ...ENDefault },
     experiences: { ...ENExperiences, ...ENDefault },
     projects: { ...ENProjects, ...ENDefault },
+    contact: { ...ENContact, ...ENDefault },
     default: { ...ENDefault },
   },
   "pt-BR": {
@@ -43,6 +46,7 @@ const resources = {
     about: { ...PTAbout, ...PTDefault },
     experiences: { ...PTExperiences, ...PTDefault },
     projects: { ...PTProjects, ...PTDefault },
+    contact: { ...PTContact, ...PTDefault },
     default: { ...PTDefault },
   },
 };
