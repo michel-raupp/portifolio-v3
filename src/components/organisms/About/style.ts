@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: calc(100% - 32px);
+  max-width: 1024px;
   gap: 64px;
 
   @media (max-width: 768px) {

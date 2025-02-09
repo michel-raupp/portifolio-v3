@@ -36,7 +36,6 @@ export const WebsiteBody = styled.div<IProps>`
   align-items: center;
   gap: 128px;
   width: 100%;
-  max-width: 1024px;
   padding: 70px 0;
   margin: 0 auto;
 

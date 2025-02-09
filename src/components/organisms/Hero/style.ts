@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   gap: 32px;
   width: calc(100% - 32px);
+  max-width: 1024px;
   padding-top: 64px;
 
   @media (max-width: 1024px) {
