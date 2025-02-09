@@ -10,17 +10,7 @@ import {
   TButtonSizes,
   TButtonWidth,
 } from "./types";
-import { StyleButton, StyledText } from "./style";
-
-interface IButton {
-  title?: string;
-  color?: TButtonColors;
-  size?: TButtonSizes;
-  width?: TButtonWidth;
-  onClick?: () => void;
-  iconLeft?: ReactNode;
-  iconRight?: ReactNode;
-}
+import { StyleButton, StyledAnchor, StyledText } from "./style";
 
 interface IRenderText {
   title: string;
@@ -37,6 +27,20 @@ const RenderText = ({ title, color, size, $darkMode }: IRenderText) => {
   );
 };
 
+interface IButton {
+  title?: string;
+  color?: TButtonColors;
+  size?: TButtonSizes;
+  width?: TButtonWidth;
+  onClick?: () => void;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
+  accessibilityLabel?: string;
+  isDownload?: boolean;
+  isLink?: boolean;
+  url?: string;
+}
+
 const Button = ({
   title,
   color = BUTTON_COLORS.PRIMARY,
@@ -45,8 +49,39 @@ const Button = ({
   onClick = () => {},
   iconLeft,
   iconRight,
+  accessibilityLabel,
+  isDownload,
+  isLink,
+  url,
 }: IButton) => {
   const { isDarkMode } = useThemeStore((state) => state);
+
+  if (isLink) {
+    return (
+      <StyledAnchor
+        $darkMode={isDarkMode}
+        color={color}
+        size={size}
+        width={width}
+        href={url}
+        aria-label={accessibilityLabel}
+        target="_blank"
+        rel="noreferrer noopener"
+        download={isDownload}
+      >
+        {iconLeft}
+        {title && (
+          <RenderText
+            title={title}
+            color={color}
+            size={size}
+            $darkMode={isDarkMode}
+          />
+        )}
+        {iconRight}
+      </StyledAnchor>
+    );
+  }
 
   return (
     <StyleButton
@@ -55,6 +90,7 @@ const Button = ({
       size={size}
       width={width}
       onClick={onClick}
+      aria-label={accessibilityLabel}
     >
       {iconLeft}
       {title && (

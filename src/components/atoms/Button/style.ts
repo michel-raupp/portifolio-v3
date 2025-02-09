@@ -94,6 +94,10 @@ export const StyleButton = styled.button<IStyleButton>`
   }
 `;
 
+export const StyledAnchor = styled.a<IStyleButton>`
+  ${StyleButton}
+`;
+
 export const StyledText = styled.p<IStyledText>`
   color: ${({ $darkMode, color }) => getTextColor($darkMode, color)};
   font-size: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "16px" : "14px")};
