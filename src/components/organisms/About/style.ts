@@ -1,6 +1,6 @@
+import styled from "styled-components";
 import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 import { getColor } from "@/helpers";
-import styled from "styled-components";
 
 interface IProps {
   $darkMode: boolean;
@@ -8,7 +8,7 @@ interface IProps {
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: calc(100% - 32px);
   gap: 64px;
 
   @media (max-width: 768px) {

@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  width: 100%;
+  width: calc(100% - 32px);
   padding-top: 64px;
 
   @media (max-width: 1024px) {

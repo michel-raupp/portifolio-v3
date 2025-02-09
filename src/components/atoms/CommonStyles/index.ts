@@ -33,8 +33,9 @@ export const Background = styled.div<IProps>`
 export const WebsiteBody = styled.div<IProps>`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 128px;
-  width: calc(100% - 32px);
+  width: 100%;
   max-width: 1024px;
   padding: 70px 0;
   margin: 0 auto;
