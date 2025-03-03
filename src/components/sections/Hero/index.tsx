@@ -31,6 +31,8 @@ const Hero = () => {
           $darkMode={isDarkMode}
           src={ProfilePicture}
           alt={t("profilePicture")}
+          height="100%"
+          width="100%"
         />
         <SenderOrigin isOnlyMobile isDarkMode={isDarkMode} t={t} />
       </ImageWrapper>

@@ -30,6 +30,8 @@ const Contact = () => {
             $darkMode={isDarkMode}
             src={CatPicture}
             alt={t("profilePicture")}
+            height="100%"
+            width="100%"
           />
           <ChatWrapper>
             <Chat

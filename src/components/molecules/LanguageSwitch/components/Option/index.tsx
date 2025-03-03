@@ -67,6 +67,8 @@ const Option = ({
             src={targetLanguage.image}
             alt={targetLanguage.label}
             $darkMode={isDarkMode}
+            height={24}
+            width={24}
           />
         )}
       </ImgContainer>

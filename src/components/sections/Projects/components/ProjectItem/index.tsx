@@ -39,7 +39,13 @@ const ProjectItem = ({ data }: IProjectItem) => {
       {loading ? (
         <Skeleton height="288px" width="288px" />
       ) : (
-        <Image src={data.image} alt={data.alt} $darkMode={isDarkMode} />
+        <Image
+          src={data.image}
+          alt={data.alt}
+          $darkMode={isDarkMode}
+          height="288px"
+          width="288px"
+        />
       )}
       <Text text={data.name} color={THEME_COLORS.text} />
       <Actions>
