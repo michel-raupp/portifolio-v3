@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { LANGUAGES, TLanguage } from "@/stores";
 
+import { Skeleton } from "@/components/atoms";
 import { FlagButton, FlagImg } from "./styles";
 
 import PT_FLAG from "@/assets/flags/pt-BR.png";
@@ -19,6 +21,11 @@ const LanguageButton = ({
   t,
 }: ILanguageButton) => {
   const flagSrc = language === LANGUAGES.PT ? PT_FLAG : EN_FLAG;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   return (
     <FlagButton
@@ -26,7 +33,11 @@ const LanguageButton = ({
       $darkMode={isDarkMode}
       aria-label={t("openLangOptions")}
     >
-      <FlagImg src={flagSrc} alt="flag" aria-hidden />
+      {loading ? (
+        <Skeleton />
+      ) : (
+        <FlagImg src={flagSrc} alt="flag" aria-hidden />
+      )}
     </FlagButton>
   );
 };

@@ -6,4 +6,5 @@ export { default as Socials } from "./Socials";
 export { default as Tooltip } from "./Tooltip";
 export { default as Section } from "./Section";
 export { default as Footer } from "./Footer";
+export { default as Skeleton } from "./Skeleton";
 export * from "./CommonStyles";

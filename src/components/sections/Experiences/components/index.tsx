@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
 
 import { TEXT_HIERARCHIES, TEXT_SIZE } from "@/components/atoms/Text/types";
-import { Text } from "@/components/atoms";
+import { Skeleton, Text } from "@/components/atoms";
 
 import { IExperience } from "../data";
 import {
@@ -25,15 +26,24 @@ interface IExperienceItem {
 const ExperienceItem = ({ data }: IExperienceItem) => {
   const { t } = useTranslation("experiences");
   const { isDarkMode } = useThemeStore((state) => state);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   return (
     <Item key={data.company} $darkMode={isDarkMode}>
       <ItemHeader>
-        <Image
-          src={data.icon}
-          alt={t("companyLogo", { company: data.company })}
-          $darkMode={isDarkMode}
-        />
+        {loading ? (
+          <Skeleton width="64px" height="64px" isRounded />
+        ) : (
+          <Image
+            src={data.icon}
+            alt={t("companyLogo", { company: data.company })}
+            $darkMode={isDarkMode}
+          />
+        )}
         <ItemTitle>
           <Text
             text={data.company}

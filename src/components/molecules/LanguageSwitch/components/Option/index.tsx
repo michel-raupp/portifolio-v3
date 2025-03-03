@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { LANGUAGES, TLanguage } from "@/stores";
 
 import { TEXT_SIZE } from "@/components/atoms/Text/types";
-import { Text } from "@/components/atoms";
+import { Skeleton, Text } from "@/components/atoms";
 import { FlagImg, ImgContainer, LanguageOption } from "./styles";
 
 interface ILang {
@@ -32,6 +32,8 @@ const Option = ({
   choseLanguage,
   handleCloseWindow,
 }: IOption) => {
+  const [loading, setLoading] = useState(true);
+
   const targetLanguage =
     language === LANGUAGES.PT ? data.english : data.portuguese;
 
@@ -39,6 +41,10 @@ const Option = ({
     if ((event.target as HTMLElement).closest("button")) return;
     handleCloseWindow();
   }
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
@@ -54,11 +60,15 @@ const Option = ({
       tabIndex={0}
     >
       <ImgContainer $darkMode={isDarkMode}>
-        <FlagImg
-          src={targetLanguage.image}
-          alt={targetLanguage.label}
-          $darkMode={isDarkMode}
-        />
+        {loading ? (
+          <Skeleton isRounded />
+        ) : (
+          <FlagImg
+            src={targetLanguage.image}
+            alt={targetLanguage.label}
+            $darkMode={isDarkMode}
+          />
+        )}
       </ImgContainer>
       <Text text={targetLanguage.label} size={TEXT_SIZE.S} />
     </LanguageOption>

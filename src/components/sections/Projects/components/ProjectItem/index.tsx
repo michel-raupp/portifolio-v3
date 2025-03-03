@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
@@ -9,7 +9,7 @@ import {
   BUTTON_SIZES,
   BUTTON_WIDTH,
 } from "@/components/atoms/Button/types";
-import { Button, Text } from "@/components/atoms";
+import { Button, Skeleton, Text } from "@/components/atoms";
 
 import { IProject } from "../../data";
 import { Modal } from "..";
@@ -23,15 +23,24 @@ const ProjectItem = ({ data }: IProjectItem) => {
   const { t } = useTranslation("projects");
   const { isDarkMode } = useThemeStore((state) => state);
 
+  const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <Item key={data.name} $darkMode={isDarkMode}>
-      <Image src={data.image} alt={data.alt} $darkMode={isDarkMode} />
+      {loading ? (
+        <Skeleton height="288px" width="288px" />
+      ) : (
+        <Image src={data.image} alt={data.alt} $darkMode={isDarkMode} />
+      )}
       <Text text={data.name} color={THEME_COLORS.text} />
       <Actions>
         <Button
