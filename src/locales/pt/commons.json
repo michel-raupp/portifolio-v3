@@ -12,5 +12,7 @@
   "downloadCV": "Baixar Currículo",
   "openMenu": "Abrir menu",
   "closeMenu": "Fechar menu",
-  "goToHome": "home button"
+  "goToHome": "home button",
+  "metaDescription": "Website pessoal do desenvolvedor de software Michel Raupp, especializado em tecnologias front-end e mobile.",
+  "metaKeywords": "desenvolvedor, software, programador, web, site, pessoal, portfólio, currículo"
 }

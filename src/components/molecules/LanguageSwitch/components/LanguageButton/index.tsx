@@ -36,7 +36,13 @@ const LanguageButton = ({
       {loading ? (
         <Skeleton />
       ) : (
-        <FlagImg src={flagSrc} alt="flag" aria-hidden />
+        <FlagImg
+          src={flagSrc}
+          alt="flag"
+          aria-hidden
+          height="32px"
+          width="32px"
+        />
       )}
     </FlagButton>
   );

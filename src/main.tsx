@@ -1,10 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
+import { MetaTags } from "./components/atoms";
 import { I18nProvider, ThemeColorsProvider } from "./providers";
-import "./locales";
-
 import App from "./App.tsx";
+
+import "./locales";
 import "./index.css";
 
 const Root = () => {
@@ -12,6 +13,7 @@ const Root = () => {
     <StrictMode>
       <I18nProvider>
         <ThemeColorsProvider>
+          <MetaTags />
           <App />
         </ThemeColorsProvider>
       </I18nProvider>

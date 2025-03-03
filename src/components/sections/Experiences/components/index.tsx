@@ -42,6 +42,8 @@ const ExperienceItem = ({ data }: IExperienceItem) => {
             src={data.icon}
             alt={t("companyLogo", { company: data.company })}
             $darkMode={isDarkMode}
+            height="64px"
+            width="64p"
           />
         )}
         <ItemTitle>
