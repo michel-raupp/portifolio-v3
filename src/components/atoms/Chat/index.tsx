@@ -5,6 +5,7 @@ import { Text } from "@/components/atoms";
 import { TAIL_DIRECTIONS, TTailDirections } from "./types";
 import { Bubble, StyledChat, Tail } from "./style";
 import { TEXT_HIERARCHIES, TEXT_SIZE } from "../Text/types";
+import { THEME_COLORS } from "@/constants";
 
 interface IChat {
   title?: string;
@@ -24,6 +25,7 @@ const Chat = ({ direction, title, text }: IChat) => {
           text={text}
           size={TEXT_SIZE.BASE}
           hierarchy={TEXT_HIERARCHIES.PARAGRAPH}
+          color={THEME_COLORS.lightText}
         />
       </Bubble>
 

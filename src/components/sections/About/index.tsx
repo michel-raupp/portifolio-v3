@@ -30,8 +30,8 @@ const About = () => {
           text={t("aboutTitle1")}
           color={THEME_COLORS.text}
         />
-        <Text text={t("aboutText1")} color={THEME_COLORS.text} />
-        <Text text={t("aboutText2")} color={THEME_COLORS.text} />
+        <Text text={t("aboutText1")} color={THEME_COLORS.lightText} />
+        <Text text={t("aboutText2")} color={THEME_COLORS.lightText} />
         <DownloadButton
           href="/resume.pdf"
           download

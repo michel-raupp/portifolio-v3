@@ -6,6 +6,9 @@ interface IProps {
 }
 
 export const StyledFooter = styled.footer<IProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 16px;
   background-color: ${({ $darkMode }) =>

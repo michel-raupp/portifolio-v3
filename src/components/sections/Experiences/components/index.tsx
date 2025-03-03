@@ -49,18 +49,18 @@ const ExperienceItem = ({ data }: IExperienceItem) => {
             <Text
               text={data.startDate}
               hierarchy={TEXT_HIERARCHIES.LABEL}
-              color={THEME_COLORS.text}
+              color={THEME_COLORS.lightText}
             />
             <Text
               text="~"
               hierarchy={TEXT_HIERARCHIES.LABEL}
-              color={THEME_COLORS.text}
+              color={THEME_COLORS.lightText}
               aria-hidden="true"
             />
             <Text
               text={data.endDate}
               hierarchy={TEXT_HIERARCHIES.LABEL}
-              color={THEME_COLORS.text}
+              color={THEME_COLORS.lightText}
             />
           </Date>
         </ItemTitle>
@@ -68,11 +68,11 @@ const ExperienceItem = ({ data }: IExperienceItem) => {
       <Resume>
         <Text
           text={data.position}
-          color={THEME_COLORS.text}
+          color={THEME_COLORS.lightText}
           size={TEXT_SIZE.XL}
           bold
         />
-        <Text text={data.resume} color={THEME_COLORS.text} />
+        <Text text={data.resume} color={THEME_COLORS.lightText} />
       </Resume>
       <Tags aria-label={t("tagsSection")}>
         {data.tags.map((tag) => (

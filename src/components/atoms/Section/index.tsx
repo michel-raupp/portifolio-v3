@@ -29,7 +29,7 @@ const Section = ({
           text={title}
           color={THEME_COLORS.text}
         />
-        <Text text={description} color={THEME_COLORS.text} />
+        <Text text={description} color={THEME_COLORS.lightText} />
       </Col>
       <List $isHorizontalList={isHorizontalList}>{children}</List>
     </Wrapper>

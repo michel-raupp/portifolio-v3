@@ -24,7 +24,7 @@ const SenderOrigin = ({ isOnlyMobile, isDarkMode, t }: ISendOrigin) => {
         </Row>
         <Text
           text={t("personalInfo")}
-          color={THEME_COLORS.text}
+          color={THEME_COLORS.lightText}
           size={TEXT_SIZE.S}
         />
       </Wrapper>
@@ -34,16 +34,16 @@ const SenderOrigin = ({ isOnlyMobile, isDarkMode, t }: ISendOrigin) => {
     <Wrapper>
       <Text
         text="Michel Raupp"
-        color={THEME_COLORS.text}
+        color={THEME_COLORS.lightText}
         size={TEXT_SIZE.S}
         bold
       />
       <div aria-hidden>
-        <Text text="-" color={THEME_COLORS.text} size={TEXT_SIZE.S} bold />
+        <Text text="-" color={THEME_COLORS.lightText} size={TEXT_SIZE.S} bold />
       </div>
       <Text
         text={t("personalInfo")}
-        color={THEME_COLORS.text}
+        color={THEME_COLORS.lightText}
         size={TEXT_SIZE.S}
       />
     </Wrapper>

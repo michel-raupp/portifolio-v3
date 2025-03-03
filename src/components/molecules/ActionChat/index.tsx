@@ -18,7 +18,7 @@ const ActionChat = ({ text }: IActionChat) => {
 
   return (
     <Chat $darkMode={isDarkMode}>
-      <Text text={text} color={THEME_COLORS.text} />
+      <Text text={text} color={THEME_COLORS.lightText} />
       <SocialWrapper>
         <Socials />
         <DownloadButton

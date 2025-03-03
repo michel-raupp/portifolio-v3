@@ -62,7 +62,7 @@ const Modal = ({ data, handleModal }: IModal) => {
         </Header>
         <Line $darkMode={isDarkMode} />
 
-        <Text text={data.description} color={THEME_COLORS.text} />
+        <Text text={data.description} color={THEME_COLORS.lightText} />
         <Line $darkMode={isDarkMode} />
         <Col>
           <Text
@@ -87,12 +87,12 @@ const Modal = ({ data, handleModal }: IModal) => {
             size={TEXT_SIZE.LG}
             bold
           />
-          <Text text={data.lessons} color={THEME_COLORS.text} />
+          <Text text={data.lessons} color={THEME_COLORS.lightText} />
         </Col>
         <Line $darkMode={isDarkMode} />
         <Date>
-          <Text text={t("projectDate")} color={THEME_COLORS.text} />
-          <Text text={data.date} color={THEME_COLORS.text} />
+          <Text text={t("projectDate")} color={THEME_COLORS.lightText} />
+          <Text text={data.date} color={THEME_COLORS.lightText} />
         </Date>
         <Actions>
           {data.github && (
