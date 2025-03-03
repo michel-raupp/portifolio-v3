@@ -11,7 +11,7 @@ export const Background = styled.div<IProps>`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background: ${({ $darkMode }) =>
     $darkMode
       ? `${DARK_THEME.background} radial-gradient(
