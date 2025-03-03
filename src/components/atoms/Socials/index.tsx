@@ -10,6 +10,7 @@ import { StyledSocial, Wrapper, Text } from "./style";
 
 interface ISocials {
   showText?: boolean;
+  hideGithub?: boolean;
 }
 
 const socialLinks = [
@@ -30,26 +31,32 @@ const socialLinks = [
   },
 ];
 
-const Socials = ({ showText }: ISocials) => {
+const Socials = ({ showText, hideGithub }: ISocials) => {
   const { isDarkMode } = useThemeStore((state) => state);
 
   return (
     <Wrapper>
-      {socialLinks.map(({ href, label, icon: Icon }) => (
-        <StyledSocial
-          key={href}
-          target="blank"
-          rel="noopener noreferrer"
-          href={href}
-          aria-label={label}
-          $darkMode={isDarkMode}
-          $showText={showText}
-        >
-          <Icon size={24} />
-          {showText && <Text $darkMode={isDarkMode}>{label}</Text>}
-          <Tooltip text={label} isTooltipAbove parentSelector={StyledSocial} />
-        </StyledSocial>
-      ))}
+      {socialLinks
+        .filter(({ label }) => !(hideGithub && label === "Github"))
+        .map(({ href, label, icon: Icon }) => (
+          <StyledSocial
+            key={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={href}
+            aria-label={label}
+            $darkMode={isDarkMode}
+            $showText={showText}
+          >
+            <Icon size={24} />
+            {showText && <Text $darkMode={isDarkMode}>{label}</Text>}
+            <Tooltip
+              text={label}
+              isTooltipAbove
+              parentSelector={StyledSocial}
+            />
+          </StyledSocial>
+        ))}
     </Wrapper>
   );
 };

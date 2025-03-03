@@ -83,7 +83,7 @@ const DropdownMenu = ({ isOpen, data, handleCloseMenu }: IDropdownMenu) => {
               t={t}
             />
           </MenuWrapper>
-          <Socials showText />
+          <Socials showText hideGithub />
         </Content>
       </Wrapper>
       <Background
