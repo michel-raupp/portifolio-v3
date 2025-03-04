@@ -25,5 +25,6 @@ export const FlagButton = styled.button<IProps>`
 
 export const FlagImg = styled.img`
   width: 100%;
+  height: 100%;
   transition: 0.3s;
 `;

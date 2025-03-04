@@ -49,14 +49,17 @@ export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 16px;
-  max-width: 384px;
   width: 100%;
+  max-width: 384px;
+  height: 384px;
 
   @media (max-width: 1024px) {
+    height: 280px;
     max-width: 280px;
   }
 
   @media (max-width: 768px) {
+    height: 96px;
     max-width: unset;
   }
 `;

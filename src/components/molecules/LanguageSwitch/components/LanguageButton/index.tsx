@@ -40,8 +40,8 @@ const LanguageButton = ({
           src={flagSrc}
           alt="flag"
           aria-hidden
-          height="32px"
-          width="32px"
+          height="64px"
+          width="64px"
         />
       )}
     </FlagButton>
