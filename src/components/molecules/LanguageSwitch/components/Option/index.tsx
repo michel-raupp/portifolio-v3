@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect } from "react";
 
 import { LANGUAGES, TLanguage } from "@/stores";
 
@@ -32,19 +32,16 @@ const Option = ({
   choseLanguage,
   handleCloseWindow,
 }: IOption) => {
-  const [loading, setLoading] = useState(true);
-
   const targetLanguage =
     language === LANGUAGES.PT ? data.english : data.portuguese;
 
-  function handleClickOutside(event: MouseEvent) {
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
     if ((event.target as HTMLElement).closest("button")) return;
     handleCloseWindow();
-  }
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+    },
+    [handleCloseWindow]
+  );
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);

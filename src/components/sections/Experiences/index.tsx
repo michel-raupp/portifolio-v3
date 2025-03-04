@@ -2,12 +2,12 @@ import { useTranslation } from "react-i18next";
 
 import { Section } from "@/components/atoms";
 
-import { getExperiencesData } from "./data";
+import { useGetExperiencesData } from "./data";
 import ExperienceItem from "./components";
 
 const Experiences = () => {
   const { t } = useTranslation("experiences");
-  const experiences = getExperiencesData();
+  const experiences = useGetExperiencesData();
 
   return (
     <Section

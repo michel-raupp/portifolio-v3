@@ -2,12 +2,12 @@ import { useTranslation } from "react-i18next";
 
 import { Section } from "@/components/atoms";
 
-import { getProjectsData } from "./data";
+import { useGetProjectsData } from "./data";
 import { ProjectItem } from "./components";
 
 const Projects = () => {
   const { t } = useTranslation("projects");
-  const projects = getProjectsData();
+  const projects = useGetProjectsData();
 
   return (
     <Section

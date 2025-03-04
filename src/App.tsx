@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     updateHtmlLang();
-  }, [language]);
+  }, [language, updateHtmlLang]);
 
   return (
     <Suspense fallback={<Skeleton height="100vh" />}>

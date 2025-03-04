@@ -9,7 +9,7 @@ import App from "./App.tsx";
 import "./locales";
 import "./index.css";
 
-const Root = () => {
+export const Root = () => {
   return (
     <StrictMode>
       <HelmetProvider>

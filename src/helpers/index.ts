@@ -11,7 +11,7 @@ interface IDateOptions {
   month: "short";
 }
 
-export const convertToDate = (date: Date) => {
+export const ConvertToDate = (date: Date) => {
   const { language } = useI18nStore((state) => state);
 
   const dateOptions = {
@@ -22,7 +22,7 @@ export const convertToDate = (date: Date) => {
   return date.toLocaleDateString(language, dateOptions);
 };
 
-export const updateQuery = (key: string, value: string | null) => {
+export const UpdateQuery = (key: string, value: string | null) => {
   const url = new URL(window.location.href);
 
   if (value) {

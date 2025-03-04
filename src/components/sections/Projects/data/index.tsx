@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { convertToDate } from "@/helpers";
+import { ConvertToDate } from "@/helpers";
 
 import projectImage1 from "@/assets/images/project-1.webp";
 import projectImage2 from "@/assets/images/project-2.webp";
@@ -19,7 +19,7 @@ export interface IProject {
   lessons: string;
 }
 
-export const getProjectsData = () => {
+export const useGetProjectsData = () => {
   const { t } = useTranslation("projects");
 
   return [
@@ -29,7 +29,7 @@ export const getProjectsData = () => {
       image: projectImage1,
       alt: t("projectImageAlt1"),
       description: t("projectDescription1"),
-      date: convertToDate(new Date("2024-11")),
+      date: ConvertToDate(new Date("2024-11")),
       tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "Context API"],
       github: "https://github.com/michel-raupp/project-2d",
       demo: "https://project-2d.vercel.app/",
@@ -41,7 +41,7 @@ export const getProjectsData = () => {
       image: projectImage2,
       alt: t("projectImageAlt2"),
       description: t("projectDescription2"),
-      date: convertToDate(new Date("2023-10")),
+      date: ConvertToDate(new Date("2023-10")),
       tags: [
         "React.js",
         "Next.js",
@@ -60,7 +60,7 @@ export const getProjectsData = () => {
       image: projectImage3,
       alt: t("projectImageAlt3"),
       description: t("projectDescription3"),
-      date: convertToDate(new Date("2023-03")),
+      date: ConvertToDate(new Date("2023-03")),
       tags: ["React", "Javascript", "Styled Components", "LocalStorage"],
       demo: "https://project-pizzaria.vercel.app/",
       lessons: t("projectLessons3"),

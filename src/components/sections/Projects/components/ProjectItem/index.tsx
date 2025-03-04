@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
-import { updateQuery } from "@/helpers";
+import { UpdateQuery } from "@/helpers";
 
 import {
   BUTTON_COLORS,
@@ -47,11 +47,11 @@ const ProjectItem = ({ data }: IProjectItem) => {
 
   const handleModal = () => {
     if (!isModalOpen) {
-      updateQuery(PROJECT_PARAM, data.id);
-      updateQuery("section", SECTION_ID);
+      UpdateQuery(PROJECT_PARAM, data.id);
+      UpdateQuery("section", SECTION_ID);
     } else {
-      updateQuery(PROJECT_PARAM, null);
-      updateQuery("section", null);
+      UpdateQuery(PROJECT_PARAM, null);
+      UpdateQuery("section", null);
     }
     setIsModalOpen(!isModalOpen);
   };
