@@ -27,7 +27,7 @@ const LanguageButton = ({
       $darkMode={isDarkMode}
       aria-label={t("openLangOptions")}
     >
-      <Suspense fallback={<Skeleton />}>
+      <Suspense fallback={<Skeleton width="32px" height="32px" />}>
         <FlagImg
           src={flagSrc}
           alt="flag"
