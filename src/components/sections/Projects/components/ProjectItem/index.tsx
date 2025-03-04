@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
+import { updateQuery } from "@/helpers";
 
 import {
   BUTTON_COLORS,
@@ -19,6 +20,9 @@ interface IProjectItem {
   data: IProject;
 }
 
+const PROJECT_PARAM = "project";
+const SECTION_ID = "#projects";
+
 const ProjectItem = ({ data }: IProjectItem) => {
   const { t } = useTranslation("projects");
   const { isDarkMode } = useThemeStore((state) => state);
@@ -26,13 +30,31 @@ const ProjectItem = ({ data }: IProjectItem) => {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   useEffect(() => {
     setLoading(false);
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get(PROJECT_PARAM) === data.id) {
+      setIsModalOpen(true);
+      const section = document.querySelector(SECTION_ID);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [data.id]);
+
+  const handleModal = () => {
+    if (!isModalOpen) {
+      updateQuery(PROJECT_PARAM, data.id);
+      updateQuery("section", SECTION_ID);
+    } else {
+      updateQuery(PROJECT_PARAM, null);
+      updateQuery("section", null);
+    }
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <Item key={data.name} $darkMode={isDarkMode}>

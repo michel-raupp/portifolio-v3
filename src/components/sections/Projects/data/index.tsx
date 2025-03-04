@@ -7,6 +7,7 @@ import projectImage2 from "@/assets/images/project-2.webp";
 import projectImage3 from "@/assets/images/project-3.webp";
 
 export interface IProject {
+  id: string;
   name: string;
   image: string;
   alt: string;
@@ -23,6 +24,7 @@ export const getProjectsData = () => {
 
   return [
     {
+      id: "project-1",
       name: t("projectName1"),
       image: projectImage1,
       alt: t("projectImageAlt1"),
@@ -34,6 +36,7 @@ export const getProjectsData = () => {
       lessons: t("projectLessons1"),
     },
     {
+      id: "project-2",
       name: t("projectName2"),
       image: projectImage2,
       alt: t("projectImageAlt2"),
@@ -52,6 +55,7 @@ export const getProjectsData = () => {
       lessons: t("projectLessons2"),
     },
     {
+      id: "project-3",
       name: t("projectName3"),
       image: projectImage3,
       alt: t("projectImageAlt3"),
