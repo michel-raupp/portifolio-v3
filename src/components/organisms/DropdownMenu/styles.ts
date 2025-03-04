@@ -21,7 +21,7 @@ export const Wrapper = styled.div<IWrapper>`
   width: calc(100% - 16px);
   max-width: 360px;
   height: 100lvh;
-  padding-bottom: 16px 16px 100px 16px;
+  padding: 16px 16px 100px 16px;
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.gray : LIGHT_THEME.background};
   border-left: 1px solid
@@ -79,7 +79,7 @@ export const Background = styled.button<IWrapper>`
   z-index: 20;
   width: 100%;
   height: 100dvh;
-  padding-bottom: 16px 16px 100px 16px;
+  padding: 16px 16px 100px 16px;
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.primary : LIGHT_THEME.primary};
   pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
