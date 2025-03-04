@@ -4,6 +4,7 @@ import { DARK_THEME, LIGHT_THEME } from "@/constants";
 
 interface IProps {
   $darkMode: boolean;
+  $isMobile?: boolean;
 }
 
 export const Wrapper = styled.div`
@@ -33,13 +34,22 @@ export const ChatWrapper = styled.div`
 `;
 
 export const Image = styled.img<IProps>`
-  width: 100%;
+  height: 384px;
+  width: 384px;
   border-radius: 24px;
   border: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
+  display: ${({ $isMobile }) => ($isMobile ? "none" : "flex")};
+
+  @media (max-width: 1024px) {
+    height: 280px;
+    width: 280px;
+  }
 
   @media (max-width: 768px) {
-    max-width: 96px;
+    display: ${({ $isMobile }) => ($isMobile ? "flex" : "none")};
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     border-width: 2px;
   }
@@ -51,15 +61,12 @@ export const ImageWrapper = styled.div`
   gap: 16px;
   width: 100%;
   max-width: 384px;
-  height: 384px;
 
   @media (max-width: 1024px) {
-    height: 280px;
     max-width: 280px;
   }
 
   @media (max-width: 768px) {
-    height: 96px;
     max-width: unset;
   }
 `;
