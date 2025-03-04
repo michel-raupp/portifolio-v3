@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useI18nStore, useThemeStore } from "@/stores";
 
 import { Header } from "@/components/organisms";
@@ -8,8 +9,7 @@ import {
   Hero,
   Projects,
 } from "@/components/sections";
-import { Background, Footer, Skeleton, WebsiteBody } from "@/components/atoms";
-import { Suspense, useEffect } from "react";
+import { Background, Footer, WebsiteBody } from "@/components/atoms";
 
 const App = () => {
   const { isDarkMode } = useThemeStore((state) => state);
@@ -20,7 +20,7 @@ const App = () => {
   }, [language, updateHtmlLang]);
 
   return (
-    <Suspense fallback={<Skeleton height="100vh" />}>
+    <>
       <WebsiteBody $darkMode={isDarkMode}>
         <Header />
         <Hero />
@@ -31,7 +31,7 @@ const App = () => {
         <Footer />
       </WebsiteBody>
       <Background $darkMode={isDarkMode} />
-    </Suspense>
+    </>
   );
 };
 

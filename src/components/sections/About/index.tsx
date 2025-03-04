@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { IconDownload } from "@tabler/icons-react";
 
@@ -22,11 +22,6 @@ const About = () => {
   const { isDarkMode } = useThemeStore((state) => state);
   const { t } = useTranslation("about");
   const skills = getSkillsData(isDarkMode);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
 
   return (
     <Wrapper id="about">
@@ -36,19 +31,13 @@ const About = () => {
           text={t("aboutTitle1")}
           color={THEME_COLORS.text}
         />
-        {loading ? (
-          <Skeleton height="72px" />
-        ) : (
+        <Suspense fallback={<Skeleton height="72px" />}>
           <Text text={t("aboutText1")} color={THEME_COLORS.lightText} />
-        )}
-        {loading ? (
-          <Skeleton height="96px" />
-        ) : (
+        </Suspense>
+        <Suspense fallback={<Skeleton height="96px" />}>
           <Text text={t("aboutText2")} color={THEME_COLORS.lightText} />
-        )}
-        {loading ? (
-          <Skeleton height="40px" />
-        ) : (
+        </Suspense>
+        <Suspense fallback={<Skeleton height="40px" />}>
           <DownloadButton
             href="/resume.pdf"
             download
@@ -64,9 +53,8 @@ const About = () => {
               color={isDarkMode ? DARK_THEME.text : LIGHT_THEME.background}
             />
           </DownloadButton>
-        )}
+        </Suspense>
       </Col>
-
       <Col>
         <Text
           hierarchy={TEXT_HIERARCHIES.HEADING_2}
@@ -74,16 +62,20 @@ const About = () => {
           color={THEME_COLORS.text}
         />
         <SkillWrapper>
-          {skills.map((skill) => (
-            <Skill key={skill.name} $darkMode={isDarkMode}>
-              <IconContainer $darkMode={isDarkMode}>{skill.icon}</IconContainer>
-              <Text
-                text={skill.name}
-                color={THEME_COLORS.text}
-                size={TEXT_SIZE.XS}
-              />
-            </Skill>
-          ))}
+          <Suspense fallback={<Skeleton height="360px" />}>
+            {skills.map((skill) => (
+              <Skill key={skill.name} $darkMode={isDarkMode}>
+                <IconContainer $darkMode={isDarkMode}>
+                  {skill.icon}
+                </IconContainer>
+                <Text
+                  text={skill.name}
+                  color={THEME_COLORS.text}
+                  size={TEXT_SIZE.XS}
+                />
+              </Skill>
+            ))}
+          </Suspense>
         </SkillWrapper>
       </Col>
     </Wrapper>

@@ -37,8 +37,8 @@ const Option = ({
 
   const handleClickOutside = useCallback(
     (event: MouseEvent) => {
-    if ((event.target as HTMLElement).closest("button")) return;
-    handleCloseWindow();
+      if ((event.target as HTMLElement).closest("button")) return;
+      handleCloseWindow();
     },
     [handleCloseWindow]
   );
@@ -57,9 +57,7 @@ const Option = ({
       tabIndex={0}
     >
       <ImgContainer $darkMode={isDarkMode}>
-        {loading ? (
-          <Skeleton isRounded />
-        ) : (
+        <Suspense fallback={<Skeleton isRounded />}>
           <FlagImg
             src={targetLanguage.image}
             alt={targetLanguage.label}
@@ -67,7 +65,7 @@ const Option = ({
             height={24}
             width={24}
           />
-        )}
+        </Suspense>
       </ImgContainer>
       <Text text={targetLanguage.label} size={TEXT_SIZE.S} />
     </LanguageOption>

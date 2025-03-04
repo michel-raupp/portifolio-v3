@@ -1,4 +1,4 @@
-import { lazy, useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
@@ -27,12 +27,7 @@ const ProjectItem = ({ data }: IProjectItem) => {
   const { t } = useTranslation("projects");
   const { isDarkMode } = useThemeStore((state) => state);
 
-  const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -58,9 +53,7 @@ const ProjectItem = ({ data }: IProjectItem) => {
 
   return (
     <Item key={data.name} $darkMode={isDarkMode}>
-      {loading ? (
-        <Skeleton height="288px" width="288px" />
-      ) : (
+      <Suspense fallback={<Skeleton height="288px" />}>
         <Image
           src={data.image}
           alt={data.alt}
@@ -68,7 +61,7 @@ const ProjectItem = ({ data }: IProjectItem) => {
           height="288px"
           width="288px"
         />
-      )}
+      </Suspense>
       <Text text={data.name} color={THEME_COLORS.text} />
       <Actions>
         <Button

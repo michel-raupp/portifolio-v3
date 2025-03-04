@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import { LANGUAGES, TLanguage } from "@/stores";
 
 import { Skeleton } from "@/components/atoms";
@@ -21,21 +21,13 @@ const LanguageButton = ({
   t,
 }: ILanguageButton) => {
   const flagSrc = language === LANGUAGES.PT ? PT_FLAG : EN_FLAG;
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
   return (
     <FlagButton
       onClick={handleOpen}
       $darkMode={isDarkMode}
       aria-label={t("openLangOptions")}
     >
-      {loading ? (
-        <Skeleton />
-      ) : (
+      <Suspense fallback={<Skeleton />}>
         <FlagImg
           src={flagSrc}
           alt="flag"
@@ -43,7 +35,7 @@ const LanguageButton = ({
           height="64px"
           width="64px"
         />
-      )}
+      </Suspense>
     </FlagButton>
   );
 };

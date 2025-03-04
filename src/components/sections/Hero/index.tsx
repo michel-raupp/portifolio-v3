@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
@@ -15,46 +15,38 @@ import ProfilePicture from "@/assets/images/profile.webp";
 const Hero = () => {
   const { t } = useTranslation("hero");
   const { isDarkMode } = useThemeStore((state) => state);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
   return (
     <Wrapper id="home">
-      {loading ? (
-        <Skeleton height="396px" />
-      ) : (
-        <>
-          <ChatWrapper>
-            <Chat
-              direction={TAIL_DIRECTIONS.RIGHT}
-              title={t("heroTitle")}
-              text={t("heroText1")}
-            />
-            <ActionChat text={t("heroText2")} />
-            <SenderOrigin isDarkMode={isDarkMode} t={t} />
-          </ChatWrapper>
-          <ImageWrapper>
-            <Image
-              $darkMode={isDarkMode}
-              src={ProfilePicture}
-              alt={t("profilePicture")}
-              height="384px"
-              width="384px"
-            />
-            <Image
-              $darkMode={isDarkMode}
-              src={ProfilePicture}
-              alt={t("profilePicture")}
-              height="96px"
-              width="96px"
-              $isMobile
-            />
-            <SenderOrigin isOnlyMobile isDarkMode={isDarkMode} t={t} />
-          </ImageWrapper>
-        </>
-      )}
+      <Suspense fallback={<Skeleton height="396px" />}>
+        <ChatWrapper>
+          <Chat
+            direction={TAIL_DIRECTIONS.RIGHT}
+            title={t("heroTitle")}
+            text={t("heroText1")}
+          />
+          <ActionChat text={t("heroText2")} />
+          <SenderOrigin isDarkMode={isDarkMode} t={t} />
+        </ChatWrapper>
+        <ImageWrapper>
+          <Image
+            $darkMode={isDarkMode}
+            src={ProfilePicture}
+            alt={t("profilePicture")}
+            height="384px"
+            width="384px"
+          />
+          <Image
+            $darkMode={isDarkMode}
+            src={ProfilePicture}
+            alt={t("profilePicture")}
+            height="96px"
+            width="96px"
+            $isMobile
+          />
+          <SenderOrigin isOnlyMobile isDarkMode={isDarkMode} t={t} />
+        </ImageWrapper>
+      </Suspense>
     </Wrapper>
   );
 };
