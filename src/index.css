@@ -1,11 +1,12 @@
-@font-face {
+/* @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   src:
+    local("Inter Regular"),
     url(assets/fonts/Inter-Regular.woff2) format("woff2"),
     url(assets/fonts/Inter-Regular.woff) format("woff");
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -13,10 +14,11 @@
   font-style: normal;
   font-weight: 700;
   src:
+    local("Inter Bold"),
     url(assets/fonts/Inter-Bold.woff2) format("woff2"),
     url(assets/fonts/Inter-Bold.woff) format("woff");
-  font-display: optional;
-}
+  font-display: swap;
+} */
 
 /* 1. Use a more-intuitive box-sizing model */
 *,
@@ -28,7 +30,7 @@
 /* 2. Remove default margin */
 * {
   margin: 0;
-  font-family: "Inter", serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 
