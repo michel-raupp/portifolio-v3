@@ -68,13 +68,11 @@ const Header = () => {
             color={getColor(THEME_COLORS.text, isDarkMode)}
           />
         </MenuButton>
-        <Suspense fallback={<Skeleton height="100%" />}>
-          <DropdownMenu
-            isOpen={isMenuOpen}
-            data={MENU_ITEMS}
-            handleCloseMenu={handleCloseMenu}
-          />
-        </Suspense>
+        <DropdownMenu
+          isOpen={isMenuOpen}
+          data={MENU_ITEMS}
+          handleCloseMenu={handleCloseMenu}
+        />
       </HeaderWrapper>
     </StyledHeader>
   );

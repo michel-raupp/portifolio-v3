@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <Wrapper id="home">
-      <Suspense fallback={<Skeleton height="396px" />}>
+      <Suspense fallback={<Skeleton height="358px" />}>
         <ChatWrapper>
           <Chat
             direction={TAIL_DIRECTIONS.RIGHT}
