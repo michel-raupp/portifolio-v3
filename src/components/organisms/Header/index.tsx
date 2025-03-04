@@ -1,4 +1,4 @@
-import { lazy, useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconMenu2 } from "@tabler/icons-react";
 
@@ -8,7 +8,7 @@ import { getColor } from "@/helpers";
 
 const DropdownMenu = lazy(() => import("@/components/organisms/DropdownMenu"));
 import { LanguageSwitch, ThemeSwitch } from "@/components/molecules";
-import { Logo, Text } from "@/components/atoms";
+import { Logo, Skeleton, Text } from "@/components/atoms";
 
 import {
   HeaderWrapper,
@@ -68,11 +68,13 @@ const Header = () => {
             color={getColor(THEME_COLORS.text, isDarkMode)}
           />
         </MenuButton>
-        <DropdownMenu
-          isOpen={isMenuOpen}
-          data={MENU_ITEMS}
-          handleCloseMenu={handleCloseMenu}
-        />
+        <Suspense fallback={<Skeleton height="100%" />}>
+          <DropdownMenu
+            isOpen={isMenuOpen}
+            data={MENU_ITEMS}
+            handleCloseMenu={handleCloseMenu}
+          />
+        </Suspense>
       </HeaderWrapper>
     </StyledHeader>
   );

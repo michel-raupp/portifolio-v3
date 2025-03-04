@@ -11,8 +11,7 @@ export const Background = styled.div<IProps>`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100dvh;
-  padding-bottom: 100px;
+  height: 100lvh;
   background: ${({ $darkMode }) =>
     $darkMode
       ? `${DARK_THEME.background} radial-gradient(
@@ -24,11 +23,7 @@ export const Background = styled.div<IProps>`
         transparent 1%
         )`};
   background-size: 11px 11px;
-  padding: 70px 16px;
-
-  @media (max-width: 768px) {
-    padding: 75px 16px;
-  }
+  padding: 70px 16px 300px 16px;
 `;
 
 export const WebsiteBody = styled.div<IProps>`

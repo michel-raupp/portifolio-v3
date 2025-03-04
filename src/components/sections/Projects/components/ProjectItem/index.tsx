@@ -82,7 +82,11 @@ const ProjectItem = ({ data }: IProjectItem) => {
         />
       </Actions>
 
-      {isModalOpen && <Modal data={data} handleModal={handleModal} />}
+      {isModalOpen && (
+        <Suspense fallback={<Skeleton height="100%" />}>
+          <Modal data={data} handleModal={handleModal} />
+        </Suspense>
+      )}
     </Item>
   );
 };

@@ -16,6 +16,11 @@ export const StyledFooter = styled.footer<IProps>`
   border-top: 1px solid
     ${({ $darkMode }) =>
       $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
+  filter: drop-shadow(
+    0px 40px 0px
+      ${({ $darkMode }) =>
+        $darkMode ? DARK_THEME.gray : LIGHT_THEME.background}
+  );
 `;
 
 export const Wrapper = styled.div`
