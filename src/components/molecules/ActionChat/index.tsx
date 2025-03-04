@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconDownload } from "@tabler/icons-react";
 
 import { useThemeStore } from "@/stores";
 import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 
-import { Socials, Text } from "@/components/atoms";
+import { Skeleton, Socials, Text } from "@/components/atoms";
 
 import { Chat, DownloadButton, SocialWrapper } from "./style";
 
@@ -15,6 +16,11 @@ interface IActionChat {
 const ActionChat = ({ text }: IActionChat) => {
   const { isDarkMode } = useThemeStore((state) => state);
   const { t } = useTranslation("commons");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   return (
     <Chat $darkMode={isDarkMode}>
@@ -32,10 +38,14 @@ const ActionChat = ({ text }: IActionChat) => {
             text={t("resume")}
             color={isDarkMode ? THEME_COLORS.text : THEME_COLORS.background}
           />
-          <IconDownload
-            size={24}
-            color={isDarkMode ? DARK_THEME.text : LIGHT_THEME.background}
-          />
+          {loading ? (
+            <Skeleton height="24px" />
+          ) : (
+            <IconDownload
+              size={24}
+              color={isDarkMode ? DARK_THEME.text : LIGHT_THEME.background}
+            />
+          )}
         </DownloadButton>
       </SocialWrapper>
     </Chat>

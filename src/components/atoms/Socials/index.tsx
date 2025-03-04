@@ -48,7 +48,7 @@ const Socials = ({ showText, hideGithub }: ISocials) => {
             $darkMode={isDarkMode}
             $showText={showText}
           >
-            <Icon size={24} />
+            <Icon size={24} height={24} width={24} />
             {showText && <Text $darkMode={isDarkMode}>{label}</Text>}
             <Tooltip
               text={label}
