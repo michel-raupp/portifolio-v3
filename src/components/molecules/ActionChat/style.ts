@@ -47,7 +47,6 @@ export const DownloadButton = styled.a<IProps>`
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.gray : LIGHT_THEME.text};
   font-size: 16px;
-  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s;
 

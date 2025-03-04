@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Inter";
+  src:
+    local("Inter Regular"),
+    url(assets/fonts/Inter-Regular.woff2) format("woff2"),
+    url(assets/fonts/Inter-Regular.woff) format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src:
+    local("Inter Bold"),
+    url(assets/fonts/Inter-Bold.woff2) format("woff2"),
+    url(assets/fonts/Inter-Bold.woff) format("woff");
+  font-weight: 700;
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -9,6 +27,7 @@
 * {
   margin: 0;
   font-family: "Inter", serif;
+  font-weight: 400;
 }
 
 body {
