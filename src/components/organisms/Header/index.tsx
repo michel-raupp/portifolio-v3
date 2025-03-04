@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconMenu2 } from "@tabler/icons-react";
 
@@ -6,7 +6,7 @@ import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
 import { getColor } from "@/helpers";
 
-import { DropdownMenu } from "@/components/organisms";
+const DropdownMenu = lazy(() => import("@/components/organisms/DropdownMenu"));
 import { LanguageSwitch, ThemeSwitch } from "@/components/molecules";
 import { Logo, Text } from "@/components/atoms";
 

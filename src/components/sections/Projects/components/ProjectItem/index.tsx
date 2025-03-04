@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
@@ -13,7 +13,7 @@ import {
 import { Button, Skeleton, Text } from "@/components/atoms";
 
 import { IProject } from "../../data";
-import { Modal } from "..";
+const Modal = lazy(() => import("../Modal"));
 import { Image, Item, Actions } from "./style";
 
 interface IProjectItem {
