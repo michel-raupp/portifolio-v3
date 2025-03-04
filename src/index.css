@@ -3,10 +3,9 @@
   font-style: normal;
   font-weight: 400;
   src:
-    local("Inter Regular"),
     url(assets/fonts/Inter-Regular.woff2) format("woff2"),
     url(assets/fonts/Inter-Regular.woff) format("woff");
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -14,10 +13,9 @@
   font-style: normal;
   font-weight: 700;
   src:
-    local("Inter Bold"),
     url(assets/fonts/Inter-Bold.woff2) format("woff2"),
     url(assets/fonts/Inter-Bold.woff) format("woff");
-  font-display: swap;
+  font-display: optional;
 }
 
 /* 1. Use a more-intuitive box-sizing model */
