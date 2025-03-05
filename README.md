@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Introdução
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Eu tento criar anualmente uma nova versão do meu Portifolio como desenvolvedor. Esse repositório é referente a sua terceira versão!
 
-Currently, two official plugins are available:
+O intuito do portifólio é ser uma SPA (Single Page Application) simples e direta, no qual consigo demonstrar minhas experiências mais recentes e relevantes como desenvolvedor.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o projeto
 
-## Expanding the ESLint configuration
+O projeto utiliza React.js com Vite, Typescript e Styled Components. Além disso, foi utilizado i18next para internacionalização e Zustand para gerenciamento de estados globais (tema, idioma, etc)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](#)
+[![Typescript](https://img.shields.io/badge/Typescript-3178C6?logo=Typescript&logoColor=white)](#)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](#)
+[![Styled Components](https://img.shields.io/badge/Styled_Components-violet?logo=styled-components&logoColor=fff)](#)
+[![i18next](https://img.shields.io/badge/i18next-26A69A?logo=i18next&logoColor=fff)](#)
+[![Zustand](https://img.shields.io/badge/Zustand-FF9930)](#)
 
-- Configure the top-level `parserOptions` property like this:
+## Como foi criado o design?
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+O protótipo do site foi feito por mim mesmo no Figma. Não encontrei nenhuma referência de algum portifólio que gostaria de me basear então resolvi criar um do zero. [Acessar Protótipo](https://www.figma.com/design/1ceIi43nNDurAOj1rgcqA2/Portif%C3%B3lio-V3?node-id=10-443&p=f)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Pontuações do Pagespeed
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Segue abaixo as pontuações de desempenho, acessibilidade, boas práticas e SEO. [Acessar Pagespeed](https://pagespeed.web.dev/analysis/https-www-michelraupp-com/g6erf0zvtb?form_factor=mobile)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Mobile
+![image](https://github.com/user-attachments/assets/0aaba541-0e2e-4ab7-887f-c0dc9129cc24)
+
+Desktop
+![image](https://github.com/user-attachments/assets/41e23841-fe9e-4af2-9a2a-b643e0c1e604)
+
+## Como iniciar o projeto?
+
+Bom, basta seguir a documentação do Next.js com Vite. Em resumo:
+- Clone o repositório;
+- Abra-o projeto no VsCode (ou outra [IDE](https://www.redhat.com/pt-br/topics/middleware/what-is-ide#:~:text=A%20sigla%20IDE%20significa%20(Integrated,de%20usu%C3%A1rio%20gr%C3%A1fica%20(GUI).));
+- Rode o comando ```npm i``` para instalar as dependências do projeto;
+- Rode localmente o projeto utilizando o comando ```npm run dev```;
+- Acessar o ```http://localhost:5137/``` para testar o projeto local (ou o indicado em seu terminal);
+
+Documentação React.js: [Acessar](https://react.dev/learn)
+Documentação Vite.js: [Acessar](https://vite.dev/guide/)
+
+## Desafios encontrados
+
+Como nem tudo são flores, encontrei problemas durante o desenvolvimento desse projeto. Problemas encontrados:
+- Melhorar pontuações de desempenho foram muito dificeis, visto que o LCP estava muito grande;
+- Utilizar o react-helmet-async para ter meta description traduzidos corretamente para inglês/português não funcionou corretamente;
+- Em Iphones, por algum motivo o modal que é aberto ao ver detalhes de algum projeto ficava como position absolute ao invés de fixed.
+
+## Considerações finais
+
+Sinta-se livre para clonar, copiar, melhorar, editar o projeto. Caso tenha algum feedback, pode mandar um email em [michelraupp@outlook.com](mailto:michelraupp@outlook.com) ou entrar em contato comigo via [LinkedIn](https://www.linkedin.com/in/michelraupp/).
