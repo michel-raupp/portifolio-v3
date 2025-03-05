@@ -37,8 +37,11 @@ export const StyledModal = styled.div<IProps>`
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
   max-width: 768px;
   width: calc(100% - 32px);
-  height: calc(100% - 32px);
   overflow-y: scroll;
+
+  @media (max-width: 768px) {
+    height: calc(100% - 32px);
+  }
 `;
 
 export const Background = styled.button<IProps>`

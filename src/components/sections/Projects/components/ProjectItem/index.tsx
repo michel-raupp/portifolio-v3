@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import { useThemeStore } from "@/stores";
 import { THEME_COLORS } from "@/constants";
-import { UpdateQuery } from "@/helpers";
 
 import {
   BUTTON_COLORS,
@@ -13,43 +12,18 @@ import {
 import { Button, Skeleton, Text } from "@/components/atoms";
 
 import { IProject } from "../../data";
-const Modal = lazy(() => import("../Modal"));
-import { Image, Item, Actions, ModalSkeleton } from "./style";
+import { Image, Item, Actions } from "./style";
 
 interface IProjectItem {
   data: IProject;
 }
 
-const PROJECT_PARAM = "project";
-const SECTION_ID = "#projects";
-
-const ProjectItem = ({ data }: IProjectItem) => {
+const ProjectItem = ({
+  data,
+  handleModal,
+}: IProjectItem & { handleModal: () => void }) => {
   const { t } = useTranslation("projects");
   const { isDarkMode } = useThemeStore((state) => state);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get(PROJECT_PARAM) === data.id) {
-      setIsModalOpen(true);
-      const section = document.querySelector(SECTION_ID);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [data.id]);
-
-  const handleModal = () => {
-    if (!isModalOpen) {
-      UpdateQuery(PROJECT_PARAM, data.id);
-      UpdateQuery("section", SECTION_ID);
-    } else {
-      UpdateQuery(PROJECT_PARAM, null);
-      UpdateQuery("section", null);
-    }
-    setIsModalOpen(!isModalOpen);
-  };
 
   return (
     <Item key={data.name} $darkMode={isDarkMode}>
@@ -82,18 +56,6 @@ const ProjectItem = ({ data }: IProjectItem) => {
           accessibilityLabel={t("visitProjectLabel")}
         />
       </Actions>
-
-      {isModalOpen && (
-        <Suspense
-          fallback={
-            <ModalSkeleton>
-              <Skeleton height="100%" radius="0" />
-            </ModalSkeleton>
-          }
-        >
-          <Modal data={data} handleModal={handleModal} />
-        </Suspense>
-      )}
     </Item>
   );
 };
