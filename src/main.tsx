@@ -8,7 +8,6 @@ import { I18nProvider, ThemeColorsProvider } from "./providers";
 const App = lazy(() => import("./App.tsx"));
 
 import "./locales";
-import "./index.css";
 
 export const Root = () => {
   return (
