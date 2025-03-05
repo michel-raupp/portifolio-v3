@@ -15,9 +15,9 @@ The project uses React.js with Vite, TypeScript, and Styled Components. Addition
 [![i18next](https://img.shields.io/badge/i18next-26A69A?logo=i18next&logoColor=fff)](#)
 [![Zustand](https://img.shields.io/badge/Zustand-FF9930)](#)
 
-## Como foi criado o design?
+## How was the design created?
 
-O protótipo do site foi feito por mim mesmo no Figma. Não encontrei nenhuma referência de algum portifólio que gostaria de me basear então resolvi criar um do zero. [View Protoype](https://www.figma.com/design/1ceIi43nNDurAOj1rgcqA2/Portif%C3%B3lio-V3?node-id=10-443&p=f)
+I designed the website prototype myself using Figma. I couldn’t find any portfolio references that I wanted to base mine on, so I decided to create one from scratch. [View Protoype](https://www.figma.com/design/1ceIi43nNDurAOj1rgcqA2/Portif%C3%B3lio-V3?node-id=10-443&p=f)
 
 ## Pagespeed Scores
 
