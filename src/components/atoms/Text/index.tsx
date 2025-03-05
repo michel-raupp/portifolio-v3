@@ -1,4 +1,6 @@
 import { useThemeStore } from "@/stores/theme";
+import { THEME_COLORS } from "@/constants";
+import { TThemeColors } from "@/constants/theme";
 import {
   TEXT_HIERARCHIES,
   TEXT_SIZE,
@@ -6,7 +8,6 @@ import {
   TTextSize,
 } from "./types";
 import { StyledH1, StyledH2, StyledH3, StyledText } from "./style";
-import { THEME_COLORS, TThemeColors } from "@/constants";
 
 interface IText {
   text?: string;

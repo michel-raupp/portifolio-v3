@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { getColor } from "@/helpers";
-import { TThemeColors } from "@/constants";
+import { TThemeColors } from "@/constants/theme";
 
 import { TEXT_SIZE, TTextSize } from "./types";
 

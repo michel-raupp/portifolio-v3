@@ -1,5 +1,6 @@
 import { Suspense } from "react";
-import { LANGUAGES, TLanguage } from "@/stores";
+import { LANGUAGES } from "@/stores";
+import { TLanguage } from "@/stores/i18n";
 
 import { Skeleton } from "@/components/atoms";
 import { FlagButton, FlagImg } from "./styles";

@@ -1,4 +1,5 @@
-import { DARK_THEME, LIGHT_THEME, TThemeColors } from "@/constants";
+import { DARK_THEME, LIGHT_THEME } from "@/constants";
+import { TThemeColors } from "@/constants/theme";
 import { useI18nStore } from "@/stores";
 
 export const getColor = (color: TThemeColors, $darkMode: boolean) => {

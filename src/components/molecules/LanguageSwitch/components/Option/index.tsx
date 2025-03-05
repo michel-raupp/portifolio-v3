@@ -1,6 +1,7 @@
 import { Suspense, useCallback, useEffect } from "react";
 
-import { LANGUAGES, TLanguage } from "@/stores";
+import { LANGUAGES } from "@/stores";
+import { TLanguage } from "@/stores/i18n";
 
 import { TEXT_SIZE } from "@/components/atoms/Text/types";
 import { Skeleton, Text } from "@/components/atoms";

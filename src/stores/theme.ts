@@ -1,4 +1,5 @@
-import { THEME_TYPES, ThemeTypes } from "@/constants";
+import { THEME_TYPES } from "@/constants";
+import { ThemeTypes } from "@/constants/theme";
 import { create } from "zustand";
 
 interface ThemeState {

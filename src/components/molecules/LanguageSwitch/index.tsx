@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { LANGUAGES, TLanguage, useI18nStore, useThemeStore } from "@/stores";
+import { LANGUAGES, useI18nStore, useThemeStore } from "@/stores";
+import { TLanguage } from "@/stores/i18n";
 
 import { LanguageButton, Option } from "./components";
 import { SelectWindow, StyledSwitch, Tail } from "./styles";
