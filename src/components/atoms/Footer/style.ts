@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { DARK_THEME, LIGHT_THEME } from "@/constants";
-import { Text } from "@/components/atoms";
 
 interface IProps {
   $darkMode: boolean;
