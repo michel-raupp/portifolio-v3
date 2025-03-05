@@ -1,10 +1,11 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 
-import { MetaTags } from "./components/atoms";
+import { MetaTags, Skeleton } from "./components/atoms";
 import { I18nProvider, ThemeColorsProvider } from "./providers";
-import App from "./App.tsx";
+
+const App = lazy(() => import("./App.tsx"));
 
 import "./locales";
 import "./index.css";
@@ -16,7 +17,9 @@ export const Root = () => {
         <I18nProvider>
           <ThemeColorsProvider>
             <MetaTags />
-            <App />
+            <Suspense fallback={<Skeleton height="100vh" width="100vw" />}>
+              <App />
+            </Suspense>
           </ThemeColorsProvider>
         </I18nProvider>
       </HelmetProvider>
