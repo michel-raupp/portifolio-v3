@@ -35,14 +35,17 @@ export const DownloadButton = styled.a<IProps>`
   width: fit-content;
   padding: 8px 16px;
   border-radius: 4px;
+  border: 1px solid transparent;
   background-color: ${({ $darkMode }) =>
     getColor(THEME_COLORS.primary, $darkMode)};
-  transition: background-color 0.3s;
+  transition: ease-in-out 0.3s;
   cursor: pointer;
 
   &:hover {
     background-color: ${({ $darkMode }) =>
-      getColor(THEME_COLORS.gray, $darkMode)};
+      $darkMode ? DARK_THEME.background : LIGHT_THEME.text};
+    border-color: ${({ $darkMode }) =>
+      $darkMode ? DARK_THEME.text : "transparent"};
   }
 `;
 

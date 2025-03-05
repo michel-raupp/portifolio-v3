@@ -17,13 +17,16 @@ export const StyledSocial = styled.a<IProps>`
   width: fit-content;
   padding: 16px;
   border-radius: 8px;
+  border: 1px solid transparent;
   background-color: ${({ $darkMode }) =>
     getColor(THEME_COLORS.primary, $darkMode)};
-  transition: background-color 0.3s;
+  transition: ease-in-out 0.3s;
 
   &:hover {
     background-color: ${({ $darkMode }) =>
-      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.text};
+      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightText};
+    border-color: ${({ $darkMode }) =>
+      $darkMode ? DARK_THEME.text : "transparent"};
 
     .tooltip {
       opacity: 1;

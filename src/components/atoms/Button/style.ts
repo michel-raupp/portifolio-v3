@@ -88,6 +88,17 @@ const sharedStyles = css<IStyleButton>`
   padding: ${({ size }) => getPadding(size)};
   width: ${({ width }) => getWidth(width)};
   border-radius: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "8px" : "4px")};
+  transition: background-color ease-in-out 0.3s;
+
+  &:hover {
+    background-color: ${({ $darkMode }) =>
+      $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightText};
+
+    p {
+      color: ${({ $darkMode }) =>
+        $darkMode ? DARK_THEME.text : LIGHT_THEME.background};
+    }
+  }
 
   @media (max-width: 768px) {
     border-radius: 4px;
@@ -105,6 +116,7 @@ export const StyledAnchor = styled.a<IStyleButton>`
 export const StyledText = styled.p<IStyledText>`
   color: ${({ $darkMode, color }) => getTextColor($darkMode, color)};
   font-size: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "16px" : "14px")};
+  transition: color ease-in-out 0.3s;
 
   @media (max-width: 768px) {
     font-size: ${({ size }) => (size === BUTTON_SIZES.LARGE ? "14px" : "12px")};
