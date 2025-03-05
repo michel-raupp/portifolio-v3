@@ -6,12 +6,8 @@ const MetaTags = () => {
   return (
     <Helmet>
       <meta name="description" content={t("metaDescription")} />
-      <meta
-        name="keywords"
-        content="Portifolio, developer, frontend, React Native"
-      />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="author" content="Michel Raupp" />
+      <meta property="og:description" content={t("metaDescription")} />
+      <meta name="twitter:description" content={t("metaDescription")} />
     </Helmet>
   );
 };
