@@ -6,8 +6,6 @@ const MetaTags = () => {
   return (
     <Helmet>
       <meta name="description" content={t("metaDescription")} />
-      <meta property="og:description" content={t("metaDescription")} />
-      <meta name="twitter:description" content={t("metaDescription")} />
     </Helmet>
   );
 };
