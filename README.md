@@ -1,12 +1,12 @@
-# Introdução
+# Introduction
 
-Eu tento criar anualmente uma nova versão do meu Portifolio como desenvolvedor. Esse repositório é referente a sua terceira versão!
+I try to create a new version of my portfolio as a developer every year. This repository refers to its third version!
 
-O intuito do portifólio é ser uma SPA (Single Page Application) simples e direta, no qual consigo demonstrar minhas experiências mais recentes e relevantes como desenvolvedor.
+The purpose of this portfolio is to be a simple and straightforward SPA (Single Page Application) where I can showcase my most recent and relevant experiences as a developer.
 
-## Sobre o projeto
+## About the project
 
-O projeto utiliza React.js com Vite, Typescript e Styled Components. Além disso, foi utilizado i18next para internacionalização e Zustand para gerenciamento de estados globais (tema, idioma, etc)
+The project uses React.js with Vite, TypeScript, and Styled Components. Additionally, i18next was used for internationalization and Zustand for global state management (theme, language, etc.).
 
 [![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](#)
 [![Typescript](https://img.shields.io/badge/Typescript-3178C6?logo=Typescript&logoColor=white)](#)
@@ -17,11 +17,11 @@ O projeto utiliza React.js com Vite, Typescript e Styled Components. Além disso
 
 ## Como foi criado o design?
 
-O protótipo do site foi feito por mim mesmo no Figma. Não encontrei nenhuma referência de algum portifólio que gostaria de me basear então resolvi criar um do zero. [Acessar Protótipo](https://www.figma.com/design/1ceIi43nNDurAOj1rgcqA2/Portif%C3%B3lio-V3?node-id=10-443&p=f)
+O protótipo do site foi feito por mim mesmo no Figma. Não encontrei nenhuma referência de algum portifólio que gostaria de me basear então resolvi criar um do zero. [View Protoype](https://www.figma.com/design/1ceIi43nNDurAOj1rgcqA2/Portif%C3%B3lio-V3?node-id=10-443&p=f)
 
-## Pontuações do Pagespeed
+## Pagespeed Scores
 
-Segue abaixo as pontuações de desempenho, acessibilidade, boas práticas e SEO. [Acessar Pagespeed](https://pagespeed.web.dev/analysis/https-www-michelraupp-com/g6erf0zvtb?form_factor=mobile)
+Below are the performance, accessibility, best practices, and SEO scores.  [View Pagespeed](https://pagespeed.web.dev/analysis/https-www-michelraupp-com/g6erf0zvtb?form_factor=mobile)
 
 Mobile
 ![image](https://github.com/user-attachments/assets/0aaba541-0e2e-4ab7-887f-c0dc9129cc24)
@@ -29,25 +29,27 @@ Mobile
 Desktop
 ![image](https://github.com/user-attachments/assets/41e23841-fe9e-4af2-9a2a-b643e0c1e604)
 
-## Como iniciar o projeto?
+## How to start the project?
 
-Bom, basta seguir a documentação do Next.js com Vite. Em resumo:
-- Clone o repositório;
-- Abra-o projeto no VsCode (ou outra [IDE](https://www.redhat.com/pt-br/topics/middleware/what-is-ide#:~:text=A%20sigla%20IDE%20significa%20(Integrated,de%20usu%C3%A1rio%20gr%C3%A1fica%20(GUI).));
-- Rode o comando ```npm i``` para instalar as dependências do projeto;
-- Rode localmente o projeto utilizando o comando ```npm run dev```;
-- Acessar o ```http://localhost:5137/``` para testar o projeto local (ou o indicado em seu terminal);
+Well, just follow the Next.js documentation with Vite. In short:
+- Clone the repository;
+- Open the project in VS Code (or another [IDE](https://www.redhat.com/pt-br/topics/middleware/what-is-ide#:~:text=A%20sigla%20IDE%20significa%20(Integrated,de%20usu%C3%A1rio%20gr%C3%A1fica%20(GUI).));
+- Run the command ```npm i``` to install the project dependencies;
+- Run the project locally using the command ```npm run dev```;
+- Access ```http://localhost:5137/``` to test the project locally (or the one indicated in your terminal).
 
-Documentação React.js: [Acessar](https://react.dev/learn)
-Documentação Vite.js: [Acessar](https://vite.dev/guide/)
 
-## Desafios encontrados
+React.js Documentation: [View](https://react.dev/learn)
+Vite.js Documentation: [View](https://vite.dev/guide/)
 
-Como nem tudo são flores, encontrei problemas durante o desenvolvimento desse projeto. Problemas encontrados:
-- Melhorar pontuações de desempenho foram muito dificeis, visto que o LCP estava muito grande;
-- Utilizar o react-helmet-async para ter meta description traduzidos corretamente para inglês/português não funcionou corretamente;
-- Em Iphones, por algum motivo o modal que é aberto ao ver detalhes de algum projeto ficava como position absolute ao invés de fixed.
+## Challenges faced
 
-## Considerações finais
+Since not everything is smooth sailing, I encountered some issues while developing this project. Problems found:
 
-Sinta-se livre para clonar, copiar, melhorar, editar o projeto. Caso tenha algum feedback, pode mandar um email em [michelraupp@outlook.com](mailto:michelraupp@outlook.com) ou entrar em contato comigo via [LinkedIn](https://www.linkedin.com/in/michelraupp/).
+- Improving performance scores was quite challenging since the LCP was too high;
+- Using react-helmet-async to properly translate meta descriptions into English/Portuguese did not work correctly;
+- On iPhones, for some reason, the modal that opens when viewing project details was appearing as position: absolute instead of fixed.
+
+## Final considerations
+
+Feel free to clone, copy, improve, or edit the project. If you have any feedback, you can send me an email at [michelraupp@outlook.com](mailto:michelraupp@outlook.com) or contact me via [LinkedIn](https://www.linkedin.com/in/michelraupp/).
