@@ -9,7 +9,8 @@ import {
   Hero,
   Projects,
 } from "@/components/sections";
-import { Background, Footer, WebsiteBody } from "@/components/atoms";
+import { Footer } from "@/components/atoms";
+import { Background, WebsiteBody } from "./components/atoms/CommonStyles";
 
 const App = () => {
   const { isDarkMode } = useThemeStore((state) => state);

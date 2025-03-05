@@ -8,4 +8,3 @@ export { default as Section } from "./Section";
 export { default as Footer } from "./Footer";
 export { default as Skeleton } from "./Skeleton";
 export { default as MetaTags } from "./MetaTags";
-export * from "./CommonStyles";

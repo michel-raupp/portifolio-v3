@@ -1,1 +1,1 @@
-export * from "./theme";
+export { DARK_THEME, LIGHT_THEME, THEME_COLORS, THEME_TYPES } from "./theme";

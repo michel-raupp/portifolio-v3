@@ -1,2 +1,2 @@
-export * from "./theme";
-export * from "./i18n";
+export { useThemeStore } from "./theme";
+export { useI18nStore, LANGUAGES } from "./i18n";
