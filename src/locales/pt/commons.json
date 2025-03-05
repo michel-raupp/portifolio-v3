@@ -14,5 +14,8 @@
   "closeMenu": "Fechar menu",
   "goToHome": "home button",
   "metaDescription": "Website pessoal do desenvolvedor de software Michel Raupp, especializado em tecnologias front-end e mobile.",
-  "metaKeywords": "desenvolvedor, software, programador, web, site, pessoal, portfólio, currículo"
+  "metaKeywords": "desenvolvedor, software, programador, web, site, pessoal, portfólio, currículo",
+  "madeWith": "Feito com React.js, Vite, styled-components e i18next. Design e protótipo produzido no Figma.",
+  "visitFigma": "Visitar o Figma",
+  "visitGithub": "Visitar o Github"
 }

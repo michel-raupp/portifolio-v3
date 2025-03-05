@@ -19,4 +19,8 @@ export const StyledLogo = styled.a<IProps>`
       transform: translateY(-50%);
     }
   }
+
+  @media (max-width: 768px) {
+    height: 30px;
+  }
 `;

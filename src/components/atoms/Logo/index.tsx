@@ -16,7 +16,7 @@ const Logo = () => {
     <StyledLogo href="#" $darkMode={isDarkMode} aria-label={t("goToHome")}>
       <div className="words" aria-hidden="true">
         <Text
-          text="Raupp"
+          text="Portifolio"
           bold
           color={THEME_COLORS.text}
           size={TEXT_SIZE.XXL}
