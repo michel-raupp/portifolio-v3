@@ -5,7 +5,7 @@ interface ISkeleton {
   $darkMode: boolean;
   $height: string;
   $width: string;
-  $isRounded?: boolean;
+  $radius?: string;
 }
 
 interface ILoader {
@@ -15,7 +15,7 @@ interface ILoader {
 export const StyledSkeleton = styled.div<ISkeleton>`
   background-color: ${({ $darkMode }) =>
     $darkMode ? DARK_THEME.lightGray : LIGHT_THEME.lightGray};
-  border-radius: ${({ $isRounded }) => ($isRounded ? "50%" : "12px")};
+  border-radius: ${({ $radius }) => ($radius ? $radius : "0.5rem")};
   height: ${({ $height }) => `${$height}`};
   width: ${({ $width }) => `${$width}`};
   display: flex;

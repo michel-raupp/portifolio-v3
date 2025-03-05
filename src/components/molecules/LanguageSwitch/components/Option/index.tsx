@@ -58,7 +58,7 @@ const Option = ({
       tabIndex={0}
     >
       <ImgContainer $darkMode={isDarkMode}>
-        <Suspense fallback={<Skeleton isRounded />}>
+        <Suspense fallback={<Skeleton radius="50%" />}>
           <FlagImg
             src={targetLanguage.image}
             alt={targetLanguage.label}

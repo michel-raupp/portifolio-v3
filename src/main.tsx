@@ -13,7 +13,9 @@ export const Root = () => {
     <StrictMode>
       <I18nProvider>
         <ThemeColorsProvider>
-          <Suspense fallback={<Skeleton height="100vh" width="100vw" />}>
+          <Suspense
+            fallback={<Skeleton height="100vh" width="100vw" radius="0" />}
+          >
             <App />
           </Suspense>
         </ThemeColorsProvider>
