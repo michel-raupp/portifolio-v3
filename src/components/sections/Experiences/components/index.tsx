@@ -34,6 +34,7 @@ const ExperienceItem = ({ data }: IExperienceItem) => {
           <Image
             src={data.icon}
             alt={t("companyLogo", { company: data.company })}
+            loading="lazy"
             $darkMode={isDarkMode}
             height="64px"
             width="64p"
