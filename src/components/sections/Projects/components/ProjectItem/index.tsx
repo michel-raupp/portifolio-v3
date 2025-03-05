@@ -14,7 +14,7 @@ import { Button, Skeleton, Text } from "@/components/atoms";
 
 import { IProject } from "../../data";
 const Modal = lazy(() => import("../Modal"));
-import { Image, Item, Actions } from "./style";
+import { Image, Item, Actions, ModalSkeleton } from "./style";
 
 interface IProjectItem {
   data: IProject;
@@ -60,6 +60,7 @@ const ProjectItem = ({ data }: IProjectItem) => {
           $darkMode={isDarkMode}
           height="288px"
           width="288px"
+          loading="lazy"
         />
       </Suspense>
       <Text text={data.name} color={THEME_COLORS.text} />
@@ -83,7 +84,13 @@ const ProjectItem = ({ data }: IProjectItem) => {
       </Actions>
 
       {isModalOpen && (
-        <Suspense fallback={<Skeleton height="100%" />}>
+        <Suspense
+          fallback={
+            <ModalSkeleton>
+              <Skeleton height="100%" radius="0" />
+            </ModalSkeleton>
+          }
+        >
           <Modal data={data} handleModal={handleModal} />
         </Suspense>
       )}

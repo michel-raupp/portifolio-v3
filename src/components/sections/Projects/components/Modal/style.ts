@@ -24,6 +24,8 @@ export const ModalContainer = styled.div`
 `;
 
 export const StyledModal = styled.div<IProps>`
+  position: fixed;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -34,8 +36,8 @@ export const StyledModal = styled.div<IProps>`
   border: 1px solid
     ${({ $darkMode }) => ($darkMode ? DARK_THEME.lightGray : LIGHT_THEME.gray)};
   max-width: 768px;
-  width: 100%;
-  height: fit-content;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
   overflow-y: scroll;
 `;
 
@@ -94,6 +96,7 @@ export const Tag = styled.span<IProps>`
 export const Actions = styled.div`
   display: flex;
   gap: 8px;
+  margin-top: auto;
 `;
 
 export const Date = styled.div`
