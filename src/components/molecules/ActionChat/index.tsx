@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { IconDownload } from "@tabler/icons-react";
 
 import { useThemeStore } from "@/stores";
+import { useDownloadCv } from "@/helpers";
 import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
 
 import { Skeleton, Socials, Text } from "@/components/atoms";
@@ -16,6 +17,7 @@ interface IActionChat {
 const ActionChat = ({ text }: IActionChat) => {
   const { isDarkMode } = useThemeStore((state) => state);
   const { t } = useTranslation("commons");
+  const downloadCvPath = useDownloadCv();
 
   return (
     <Chat $darkMode={isDarkMode}>
@@ -25,7 +27,7 @@ const ActionChat = ({ text }: IActionChat) => {
           <Socials />
           <DownloadButton
             $darkMode={isDarkMode}
-            href="/resume.pdf"
+            href={downloadCvPath()}
             download
             aria-label={t("resume")}
           >

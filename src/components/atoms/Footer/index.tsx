@@ -20,7 +20,7 @@ const Footer = () => {
       <Wrapper>
         <Text text="Links:" color={THEME_COLORS.text} size={TEXT_SIZE.S} />
         <Link
-          href="https://www.figma.com/design/1ceIi43nNDurAOj1rgcqA2/Portif%C3%B3lio-V3?node-id=10-443&t=5FqSefiwAsJDT19z-1"
+          href="https://github.com/michel-raupp/portifolio-v3"
           target="_blank"
           rel="noreferrer noopener"
           $darkMode={isDarkMode}

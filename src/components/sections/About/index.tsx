@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { IconDownload } from "@tabler/icons-react";
 
 import { DARK_THEME, LIGHT_THEME, THEME_COLORS } from "@/constants";
+import { useDownloadCv } from "@/helpers";
 import { useThemeStore } from "@/stores";
 
 import { TEXT_HIERARCHIES, TEXT_SIZE } from "@/components/atoms/Text/types";
@@ -22,6 +23,7 @@ const About = () => {
   const { isDarkMode } = useThemeStore((state) => state);
   const { t } = useTranslation("about");
   const skills = getSkillsData(isDarkMode);
+  const downloadCvPath = useDownloadCv();
 
   return (
     <Wrapper id="about">
@@ -39,7 +41,7 @@ const About = () => {
         </Suspense>
         <Suspense fallback={<Skeleton height="40px" />}>
           <DownloadButton
-            href="/resume.pdf"
+            href={downloadCvPath()}
             download
             aria-label={t("downloadResume")}
             $darkMode={isDarkMode}
