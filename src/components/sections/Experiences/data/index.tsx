@@ -29,8 +29,9 @@ export const useGetExperiencesData = () => {
       resume: t("experienceResume1"),
       tags: [
         "React Native",
-        "TypeScript",
+        "React.js",
         "Styled Components",
+        "TypeScript",
         "Redux",
         "Jest",
       ],
@@ -44,10 +45,12 @@ export const useGetExperiencesData = () => {
       resume: t("experienceResume2"),
       tags: [
         "React Native",
+        "React.js",
+        "Next.js",
         "TypeScript",
         "Styled Components",
-        "Redux",
         t("internacionalization"),
+        "Redux",
       ],
     },
     {
@@ -57,7 +60,14 @@ export const useGetExperiencesData = () => {
       startDate: ConvertToDate(new Date(2023, 4, 0)),
       endDate: ConvertToDate(new Date(2024, 5, 0)),
       resume: t("experienceResume3"),
-      tags: ["React.js", "Javascript", "Tailwind", "HTML/CSS", "UX/UI"],
+      tags: [
+        "React.js",
+        "Next.js",
+        "Javascript",
+        "Tailwind",
+        "HTML/CSS",
+        "UX/UI",
+      ],
     },
   ] as IExperience[];
 };
